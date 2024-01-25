@@ -1,0 +1,87 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+input,
+button,
+textarea,
+select {
+    margin: 0;
+    font: inherit;
+}
+
+:root {
+    --font-family-main: "Rubik", sans-serif;
+    --font-size-m: 16px;
+    --font-line-m: 24px;
+    --font-m: var(--font-size-m) / var(--font-line-m) var(--font-family-main);
+    --font-size-l: 24px;
+    --font-line-l: 32px;
+    --font-l: var(--font-size-l) / var(--font-line-l) var(--font-family-main);
+    --font-size-xl: 32px;
+    --font-line-xl: 40px;
+    --font-xl: var(--font-size-xl) / var(--font-line-xl) var(--font-family-main);
+  
+    /* Размеры */
+    --navbar-height: 65px;
+    --sidebar-width: 300px;
+    --sidebar-width-collapsed: 80px;
+  
+    /* z- индексы */
+    --modal-z-index: 10;
+  
+    /* цвета */
+    --overlay-color: rgb(0 0 0 / 50%);
+    --error-color-light: #f00;
+    --error-color-dark: #ce0505;
+}
+
+.app_dark_theme {
+  --bg-color: #131517;
+  --inverted-bg-color: #262a2f;
+  --primary-color: #0083fc;
+  --secondary-color: #fff;
+  --inverted-primary-color: #fff;
+  --inverted-secondary-color: #0083fc;
+
+  /* skeleton */
+  --skeleton-color: #c4c3c3;
+  --skeleton-shadow: #fff;
+
+  /* code */
+  --code-bg: #262a2f;
+
+  /* card */
+  --card-bg: #3f4142;
+}
+
+.app_light_theme {
+  --bg-color: #fff;
+  --inverted-bg-color: #e2e2e2;
+  --primary-color: #f53;
+  --secondary-color: #262a2f;
+  --inverted-primary-color: #262a2f;
+  --inverted-secondary-color: #f53;
+
+  /* skeleton */
+  --skeleton-color: #c9c3c3;
+  --skeleton-shadow: #262a2f;
+
+  /* code */
+  --code-bg: #e2e2e2;
+
+  /* card */
+  --card-bg: #bebcbc;
+}
+
+body {
+    font: var(--font-m);
+}
+  
+.app {
+    min-height: 100vh;
+    color: var(--primary-color);
+    background: var(--bg-color);
+}
