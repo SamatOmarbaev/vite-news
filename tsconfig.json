@@ -9,9 +9,9 @@
     /* Bundler mode */
     "moduleResolution": "bundler",
     // "baseUrl": ".",
-    // "paths": {
-    //   "*": ["./src/*"]
-    // },
+    "paths": {
+      "*": ["./src/*"]
+    },
     "allowImportingTsExtensions": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
@@ -22,7 +22,12 @@
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+  },
+  "ts-node": {
+    "compilerOptions": {
+      "module": "CommonJS"
+    }
   },
   "include": ["src"],
   "references": [{ "path": "./tsconfig.node.json" }]

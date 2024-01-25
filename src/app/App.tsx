@@ -1,11 +1,9 @@
 import { Route, Routes } from 'react-router-dom'
-import { AboutPageAsync as AboutPage } from '../pages/AboutPage/AboutPage.async'
-import { MainPageAsync as MainPage } from '../pages/MainPage/MainPage.async'
 import { Link } from 'react-router-dom'
 import { Suspense } from 'react'
-import { useTheme } from '../theme/useTheme'
-
-
+import { useTheme } from 'app/providers/ThemeProvider'
+import { AboutPage } from 'pages/AboutPage'
+import { MainPage } from 'pages/MainPage'
 
 function App() {
   const {theme, toggleTheme} = useTheme()
