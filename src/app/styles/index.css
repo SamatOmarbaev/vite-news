@@ -2,6 +2,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    line-height: 0;
 }
 
 input,
@@ -60,10 +61,10 @@ select {
 .app_light_theme {
   --bg-color: #fff;
   --inverted-bg-color: #e2e2e2;
-  --primary-color: #f53;
+  --primary-color: #0083fc;
   --secondary-color: #262a2f;
   --inverted-primary-color: #262a2f;
-  --inverted-secondary-color: #f53;
+  --inverted-secondary-color: #0083fc;
 
   /* skeleton */
   --skeleton-color: #c9c3c3;
@@ -85,3 +86,4 @@ body {
     color: var(--primary-color);
     background: var(--bg-color);
 }
+
