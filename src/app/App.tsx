@@ -1,28 +1,36 @@
-import { Route, Routes } from 'react-router-dom'
-import { Link } from 'react-router-dom'
-import { Suspense } from 'react'
 import { useTheme } from 'app/providers/ThemeProvider'
-import { AboutPage } from 'pages/AboutPage'
-import { MainPage } from 'pages/MainPage'
+import { AppRouter } from './providers/router'
+import { Navbar } from 'widgets/Navbar'
+import { Layout } from 'antd'
+import { Content } from 'antd/es/layout/layout'
+import { Sidebar } from 'widgets/Sidebar'
+import Sider from 'antd/es/layout/Sider'
+
+
+const contentStyle: React.CSSProperties = {
+  color: 'var(--primary-color)',
+  backgroundColor: 'var(--bg-color)',
+  flexGrow: 1,
+  width: '100%',
+  overflowY: 'auto',
+  padding: '1.25rem 2.5rem',
+  height: 'calc(100vh - var(--navbar-height))'
+};
 
 function App() {
-  const {theme, toggleTheme} = useTheme()
+  const {theme} = useTheme()
 
   return (
     <div className={`app ${theme}`}>
-      <button onClick={toggleTheme}>theme</button>
-      <Link to={'/'}>
-        Main
-      </Link>
-      <Link to={'/about'}>
-        About
-      </Link>
-      <Suspense fallback={<div>Loading...</div>}>
-        <Routes>
-            <Route path='/' element={<MainPage />}/>
-            <Route path='/about' element={<AboutPage />}/>
-        </Routes>
-      </Suspense>
+      <Navbar />
+      <Layout style={{background: 'transparent', display: 'flex', flexDirection: 'inherit'}}>
+        <Sider>
+          <Sidebar />
+        </Sider>
+        <Content style={contentStyle}>
+          <AppRouter />
+        </Content>
+      </Layout>
     </div>
   )
 }
