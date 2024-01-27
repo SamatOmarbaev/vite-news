@@ -1,3 +1,4 @@
+/* global */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -13,6 +14,11 @@ select {
     font: inherit;
 }
 
+.ant-select-single .ant-select-selector .ant-select-selection-item {
+    line-height: 0;
+}
+
+/* variables */
 :root {
     --font-family-main: "Rubik", sans-serif;
     --font-size-m: 16px;
@@ -39,6 +45,7 @@ select {
     --error-color-dark: #ce0505;
 }
 
+/* themes */
 .app_dark_theme {
   --bg-color: #131517;
   --inverted-bg-color: #262a2f;
@@ -77,6 +84,7 @@ select {
   --card-bg: #bebcbc;
 }
 
+/* main */
 body {
     font: var(--font-m);
 }

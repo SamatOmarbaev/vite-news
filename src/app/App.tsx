@@ -4,7 +4,6 @@ import { Navbar } from 'widgets/Navbar'
 import { Layout } from 'antd'
 import { Content } from 'antd/es/layout/layout'
 import { Sidebar } from 'widgets/Sidebar'
-import Sider from 'antd/es/layout/Sider'
 
 
 const contentStyle: React.CSSProperties = {
@@ -24,9 +23,7 @@ function App() {
     <div className={`app ${theme}`}>
       <Navbar />
       <Layout style={{background: 'transparent', display: 'flex', flexDirection: 'inherit'}}>
-        <Sider>
-          <Sidebar />
-        </Sider>
+        <Sidebar />
         <Content style={contentStyle}>
           <AppRouter />
         </Content>

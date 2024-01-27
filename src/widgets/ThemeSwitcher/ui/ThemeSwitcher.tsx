@@ -1,13 +1,13 @@
 import { Select } from "antd"
 import { useTheme } from "app/providers/ThemeProvider"
-import './ThemeSwitcher.css'
 import IconMoon from 'shared/assets/moon.svg?react'
 import IconSun from 'shared/assets/sun.svg?react'
 import { Theme } from "app/providers/ThemeProvider/lib/ThemeContext"
 import { IconWrapper } from "shared/ui/IconWrapper"
+import { memo } from "react"
 
 
-export const ThemeSwitcher = () => {
+export const ThemeSwitcher = memo(() => {
     const {theme, toggleTheme} = useTheme()
 
     return (
@@ -23,4 +23,4 @@ export const ThemeSwitcher = () => {
             ]}
         />
     )
-}
+})
