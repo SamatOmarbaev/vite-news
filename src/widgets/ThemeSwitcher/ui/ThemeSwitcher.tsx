@@ -8,19 +8,19 @@ import { memo } from "react"
 
 
 export const ThemeSwitcher = memo(() => {
-    const {theme, toggleTheme} = useTheme()
+  const {theme, toggleTheme} = useTheme()
 
-    return (
-        <Select
-            defaultValue={theme}
-            variant="borderless"
-            style={{ width: 50, height: 50, lineHeight: 0 }}
-            onChange={toggleTheme}
-            suffixIcon={null}
-            options={[
-                { value: Theme.DARK, label: <IconWrapper Svg={IconMoon} /> },
-                { value: Theme.LIGHT, label: <IconWrapper Svg={IconSun} /> },
-            ]}
-        />
-    )
+  return (
+    <Select
+      defaultValue={theme}
+      variant="borderless"
+      style={{ width: 50, height: 50, lineHeight: 0 }}
+      onChange={toggleTheme}
+      suffixIcon={null}
+      options={[
+        { value: Theme.DARK, label: <IconWrapper Svg={IconMoon} /> },
+        { value: Theme.LIGHT, label: <IconWrapper Svg={IconSun} /> },
+      ]}
+    />
+  )
 })

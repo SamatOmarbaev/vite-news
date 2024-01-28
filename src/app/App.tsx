@@ -4,6 +4,8 @@ import { Navbar } from 'widgets/Navbar'
 import { Layout } from 'antd'
 import { Content } from 'antd/es/layout/layout'
 import { Sidebar } from 'widgets/Sidebar'
+import { Suspense } from 'react'
+import { Loader } from 'shared/ui/Loader'
 
 
 const contentStyle: React.CSSProperties = {
@@ -21,13 +23,15 @@ function App() {
 
   return (
     <div className={`app ${theme}`}>
-      <Navbar />
-      <Layout style={{background: 'transparent', display: 'flex', flexDirection: 'inherit'}}>
-        <Sidebar />
-        <Content style={contentStyle}>
-          <AppRouter />
-        </Content>
-      </Layout>
+      <Suspense fallback={<Loader />}>
+        <Navbar />
+        <Layout style={{background: 'transparent', display: 'flex', flexDirection: 'inherit'}}>
+          <Sidebar />
+          <Content style={contentStyle}>
+            <AppRouter />
+          </Content>
+        </Layout>
+      </Suspense>
     </div>
   )
 }

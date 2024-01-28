@@ -9,17 +9,17 @@ interface ThemeProviderProps {
 }
 
 export const ThemeProvider: FC<ThemeProviderProps> = (props) => {
-    const {children} = props
-    const [theme, setTheme] = useState<Theme>(defaultTheme)
+  const {children} = props
+  const [theme, setTheme] = useState<Theme>(defaultTheme)
 
-    const defaultProps = useMemo(() => ({
-        theme: theme,
-        setTheme: setTheme
-    }), [theme])
+  const defaultProps = useMemo(() => ({
+    theme: theme,
+    setTheme: setTheme
+  }), [theme])
 
-    return (
-       <ThemeContext.Provider value={defaultProps}>
-            {children}
-       </ThemeContext.Provider>
-    )
+  return (
+    <ThemeContext.Provider value={defaultProps}>
+      {children}
+    </ThemeContext.Provider>
+  )
 }
