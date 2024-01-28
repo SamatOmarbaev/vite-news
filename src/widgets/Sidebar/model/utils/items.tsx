@@ -4,6 +4,6 @@ import { HomeOutlined, SolutionOutlined } from "@ant-design/icons";
 import { getItem } from "../selectors/getItem";
 
 export const items: MenuItemType[] = [
-    getItem('Главная', RoutePath.main, <HomeOutlined />),
-    getItem('О нас', RoutePath.about, <SolutionOutlined />),
+  getItem('Главная', RoutePath.main, <HomeOutlined />),
+  getItem('О нас', RoutePath.about, <SolutionOutlined />),
 ];

@@ -5,16 +5,16 @@ interface IconWrapperProps {
 }
 
 const styles: React.CSSProperties = {
-    fill: 'var(--secondary-color)',
-    transition: 'fill .3s',
-    height: '100%',
-    width: '100%',
+  fill: 'var(--secondary-color)',
+  transition: 'fill .3s',
+  height: '100%',
+  width: '100%',
 }
 
 export const IconWrapper = memo((props: IconWrapperProps) => {
-    const {Svg} = props
+  const {Svg} = props
 
-    return (
-       <Svg style={styles} />
-    )
+  return (
+    <Svg style={styles} />
+  )
 })
