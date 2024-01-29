@@ -1,4 +1,3 @@
-import { useTheme } from 'app/providers/ThemeProvider'
 import { AppRouter } from './providers/router'
 import { Navbar } from 'widgets/Navbar'
 import { Layout } from 'antd'
@@ -19,10 +18,8 @@ const contentStyle: React.CSSProperties = {
 };
 
 function App() {
-  const {theme} = useTheme()
-
   return (
-    <div className={`app ${theme}`}>
+    <div className={'app'}>
       <Suspense fallback={<Loader />}>
         <Navbar />
         <Layout style={{background: 'transparent', display: 'flex', flexDirection: 'inherit'}}>

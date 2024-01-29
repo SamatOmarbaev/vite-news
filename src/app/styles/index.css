@@ -18,6 +18,14 @@ select {
     line-height: 0;
 }
 
+:where(.css-dev-only-do-not-override-1qhpsh8).ant-select-dropdown {
+    background-color: var(--bg-color);
+}
+
+:where(.css-dev-only-do-not-override-1qhpsh8).ant-select-dropdown .ant-select-item-option-selected:not(.ant-select-item-option-disabled) {
+    background-color: var(--inverted-bg-color);
+}
+
 /* variables */
 :root {
     --font-family-main: "Rubik", sans-serif;
@@ -33,11 +41,6 @@ select {
   
     /* Размеры */
     --navbar-height: 65px;
-    --sidebar-width: 300px;
-    --sidebar-width-collapsed: 80px;
-  
-    /* z- индексы */
-    --modal-z-index: 10;
   
     /* цвета */
     --overlay-color: rgb(0 0 0 / 50%);
@@ -69,9 +72,28 @@ select {
   --bg-color: #fff;
   --inverted-bg-color: #e2e2e2;
   --primary-color: #0083fc;
-  --secondary-color: #262a2f;
-  --inverted-primary-color: #262a2f;
+  --secondary-color: #354541;
+  --inverted-primary-color: #354541;
   --inverted-secondary-color: #0083fc;
+
+  /* skeleton */
+  --skeleton-color: #c9c3c3;
+  --skeleton-shadow: #262a2f;
+
+  /* code */
+  --code-bg: #e2e2e2;
+
+  /* card */
+  --card-bg: #bebcbc;
+}
+
+.app_alt_theme {
+  --bg-color: #232529;
+  --inverted-bg-color: #292c31;
+  --primary-color: #cc5b4d;
+  --secondary-color: #fff;
+  --inverted-primary-color: #fff;
+  --inverted-secondary-color: #cc5b4d;
 
   /* skeleton */
   --skeleton-color: #c9c3c3;
@@ -87,6 +109,7 @@ select {
 /* main */
 body {
     font: var(--font-m);
+    color: var(--primary-color);
 }
   
 .app {
