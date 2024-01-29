@@ -5,7 +5,9 @@ import { useTranslation } from "react-i18next"
 const styles: CSSProperties = {
   padding: '0px',
   marginRight: '10px',
-  color: 'var(--secondary-color)'
+  color: 'var(--secondary-color)',
+  fontWeight: '900',
+  fontSize: '1rem'
 }
 
 export const LanguageSwitcher = memo(() => {
