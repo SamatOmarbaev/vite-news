@@ -16,7 +16,7 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
-  plugins: ['react-refresh', "react"],
+  plugins: ['react-refresh', "react", 'i18next'],
   rules: {
     'react/jsx-indent': [2, 2],
     'react/jsx-indent-props': [2, 2],
@@ -56,5 +56,11 @@ module.exports = {
     ],
     "react/jsx-uses-react": "error",
     "react/jsx-uses-vars": "error",
+    'i18next/no-literal-string': [
+      'error',
+      {
+        markupOnly: true,
+      },
+    ],
   },
 }
