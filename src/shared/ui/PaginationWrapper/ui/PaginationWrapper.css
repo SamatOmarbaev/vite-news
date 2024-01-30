@@ -29,4 +29,5 @@
 .css-21ve8j.Mui-selected {
     color: var(--primary-color) !important;
     border: 1px solid var(--primary-color) !important;
+    background-color: var(--primary-color-rgba) !important;
 }
