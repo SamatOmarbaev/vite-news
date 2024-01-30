@@ -1,5 +1,6 @@
 import { AboutPage } from "pages/AboutPage"
-import { LatestNews } from "pages/LatestNews"
+import { NewPage } from "pages/LatestNewPage"
+import { MainNews } from "pages/MainNews"
 import { MainPage } from "pages/MainPage"
 import { NotFoundPage } from "pages/NotFoundPage"
 import { RouteProps } from "react-router-dom"
@@ -8,7 +9,8 @@ import { AppRoutes } from "shared/config/routes/routes"
 export const RoutePath: Record<AppRoutes, string> = {
   [AppRoutes.MAIN]: '/',
   [AppRoutes.ABOUT]: '/about',
-  [AppRoutes.LATEST]: '/latest',
+  [AppRoutes.MAIN_NEWS]: '/news',
+  [AppRoutes.NEW_PAGE]: '/news/',
 
   // last
   [AppRoutes.NOT_FOUND]: '*'
@@ -23,9 +25,13 @@ export const routeConfig: Record<AppRoutes, RouteProps> = {
     path: RoutePath.about,
     element: <AboutPage />
   },
-  [AppRoutes.LATEST]: {
-    path: RoutePath.latest,
-    element: <LatestNews />
+  [AppRoutes.MAIN_NEWS]: {
+    path: RoutePath.news,
+    element: <MainNews />
+  },
+  [AppRoutes.NEW_PAGE]: {
+    path: RoutePath.news_page + ':id',
+    element: <NewPage />
   },
 
   // last

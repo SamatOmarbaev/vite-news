@@ -24,11 +24,13 @@
 }
 
 :where(.css-dev-only-do-not-override-1qhpsh8).ant-menu-dark .ant-menu-item-selected {
+    background-color: transparent;
     color: var(--primary-color);
 }
 
-:where(.css-dev-only-do-not-override-1qhpsh8).ant-menu-dark .ant-menu-item-selected {
+:where(.css-1qhpsh8).ant-menu-dark .ant-menu-item-selected {
     background-color: transparent;
+    color: var(--primary-color);
 }
 
 :where(.css-dev-only-do-not-override-1qhpsh8) a {
@@ -51,6 +53,10 @@
 :where(.css-1qhpsh8).ant-layout .ant-layout-sider-trigger {
     background: var(--inverted-bg-color);
     color: var(--secondary-color);
+
+    &:hover {
+        color: var(--primary-color);
+    }
 }
 
 :where(.css-1qhpsh8).ant-layout .ant-layout-sider-children .ant-menu.ant-menu-inline-collapsed {
