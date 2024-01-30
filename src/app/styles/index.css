@@ -22,8 +22,20 @@ select {
     background-color: var(--bg-color);
 }
 
+:where(.css-1qhpsh8).ant-select-dropdown {
+    background-color: var(--bg-color);
+}
+
 :where(.css-dev-only-do-not-override-1qhpsh8).ant-select-dropdown .ant-select-item-option-selected:not(.ant-select-item-option-disabled) {
     background-color: var(--inverted-bg-color);
+}
+
+:where(.css-1qhpsh8).ant-select-dropdown .ant-select-item-option-selected:not(.ant-select-item-option-disabled) {
+    background-color: var(--inverted-bg-color);
+}
+
+.css-7uzo9y-MuiSkeleton-root {
+    background-color: var(--inverted-bg-color) !important;
 }
 
 /* variables */

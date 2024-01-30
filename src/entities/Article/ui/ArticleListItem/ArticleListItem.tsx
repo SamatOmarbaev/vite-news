@@ -25,7 +25,7 @@ const styleH2: CSSProperties = {
 const styleP: CSSProperties = {
   color: 'var(--secondary-color)',
   overflow: 'hidden',
-  'WebkitLineClamp': '2',
+  'WebkitLineClamp': '1',
   'WebkitBoxOrient': 'vertical',
   display: '-webkit-box',
 }
