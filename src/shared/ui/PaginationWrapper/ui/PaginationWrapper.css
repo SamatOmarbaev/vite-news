@@ -1,0 +1,19 @@
+.css-r93niq-MuiButtonBase-root-MuiPaginationItem-root {
+    background-color: var(--inverted-bg-color) !important;
+    color: var(--secondary-color) !important;
+
+    &:hover {
+        background-color: var(--primary-color-rgba) !important;
+        color: var(--primary-color) !important;
+        border: 1px solid var(--primary-color) !important;
+    }
+}
+
+.css-r93niq-MuiButtonBase-root-MuiPaginationItem-root.Mui-selected {
+    color: var(--primary-color) !important;
+    border: 1px solid var(--primary-color) !important;
+}
+
+.css-1v2lvtn-MuiPaginationItem-root {
+    color: var(--secondary-color) !important;
+}

@@ -1,0 +1,1 @@
+export { MainNewsAsync as MainNews } from "./ui/MainNews.async";

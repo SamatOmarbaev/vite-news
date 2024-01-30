@@ -65,6 +65,7 @@ select {
   --bg-color: #131517;
   --inverted-bg-color: #262a2f;
   --primary-color: #0083fc;
+  --primary-color-rgba: rgba(0, 131, 252, 0.25);
   --secondary-color: #fff;
   --inverted-primary-color: #fff;
   --inverted-secondary-color: #0083fc;
@@ -84,6 +85,7 @@ select {
   --bg-color: #fff;
   --inverted-bg-color: #e2e2e2;
   --primary-color: #0083fc;
+  --primary-color-rgba: rgba(0, 131, 252, 0.25);
   --secondary-color: #354541;
   --inverted-primary-color: #354541;
   --inverted-secondary-color: #0083fc;
@@ -103,6 +105,7 @@ select {
   --bg-color: #232529;
   --inverted-bg-color: #292c31;
   --primary-color: #cc5b4d;
+  --primary-color-rgba: rgba(204, 91, 77, 0.25);
   --secondary-color: #fff;
   --inverted-primary-color: #fff;
   --inverted-secondary-color: #cc5b4d;
