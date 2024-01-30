@@ -1,3 +1,4 @@
+/* button */
 :where(.css-dev-only-do-not-override-1qhpsh8).ant-layout .ant-layout-sider-trigger {
     background: var(--inverted-bg-color);
     color: var(--secondary-color);
@@ -6,13 +7,21 @@
         color: var(--primary-color);
     }
 }
+:where(.css-1qhpsh8).ant-layout .ant-layout-sider-trigger {
+    background: var(--inverted-bg-color);
+    color: var(--secondary-color);
 
+    &:hover {
+        color: var(--primary-color);
+    }
+}
+
+/* menu */
 :where(.css-dev-only-do-not-override-1qhpsh8).ant-menu-dark.ant-menu-root.ant-menu-inline {
     background-color: var(--inverted-bg-color);
     color: var(--secondary-color);
 }
-
-:where(.css-dev-only-do-not-override-1qhpsh8).ant-menu-dark {
+:where(.css-1qhpsh8).ant-menu-dark.ant-menu-root.ant-menu-inline {
     background-color: var(--inverted-bg-color);
     color: var(--secondary-color);
 }
@@ -23,14 +32,6 @@
     font-weight: 900;
 }
 
-:where(.css-dev-only-do-not-override-1qhpsh8).ant-menu-dark .ant-menu-item-selected {
-    color: var(--primary-color);
-}
-
-:where(.css-dev-only-do-not-override-1qhpsh8).ant-menu-dark .ant-menu-item-selected {
-    background-color: transparent;
-}
-
 :where(.css-dev-only-do-not-override-1qhpsh8) a {
     transition: none;
 }
@@ -39,12 +40,6 @@
     color: var(--primary-color);
 }
 
-:where(.css-1qhpsh8).ant-menu-dark.ant-menu-root.ant-menu-inline {
-    background-color: var(--inverted-bg-color);
-    color: var(--secondary-color);
-}
-
-:where(.css-1qhpsh8).ant-layout .ant-layout-sider-trigger {
-    background: var(--inverted-bg-color);
-    color: var(--secondary-color);
+:where(.css-1qhpsh8).ant-menu-dark:not(.ant-menu-horizontal) .ant-menu-item:not(.ant-menu-item-selected):hover {
+    color: var(--primary-color);
 }
