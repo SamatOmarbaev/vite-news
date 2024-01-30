@@ -1,5 +1,5 @@
 import { AboutPage } from "pages/AboutPage"
-import { NewPage } from "pages/LatestNewPage"
+import { MainDetailsPage } from "pages/MainDetailsPage"
 import { MainNews } from "pages/MainNews"
 import { MainPage } from "pages/MainPage"
 import { NotFoundPage } from "pages/NotFoundPage"
@@ -10,7 +10,7 @@ export const RoutePath: Record<AppRoutes, string> = {
   [AppRoutes.MAIN]: '/',
   [AppRoutes.ABOUT]: '/about',
   [AppRoutes.MAIN_NEWS]: '/news',
-  [AppRoutes.NEW_PAGE]: '/news/',
+  [AppRoutes.MAIN_DETAILS]: '/news/',
 
   // last
   [AppRoutes.NOT_FOUND]: '*'
@@ -29,9 +29,9 @@ export const routeConfig: Record<AppRoutes, RouteProps> = {
     path: RoutePath.news,
     element: <MainNews />
   },
-  [AppRoutes.NEW_PAGE]: {
-    path: RoutePath.news_page + ':id',
-    element: <NewPage />
+  [AppRoutes.MAIN_DETAILS]: {
+    path: RoutePath.news_details + ':id',
+    element: <MainDetailsPage />
   },
 
   // last
