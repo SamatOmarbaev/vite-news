@@ -3,7 +3,7 @@ import { memo } from "react"
 const NewPage = memo(() => {
   return (
     <div>
-      new page
+      {('new page')}
     </div>
   )
 })
