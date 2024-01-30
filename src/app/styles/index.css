@@ -118,3 +118,15 @@ body {
     background: var(--bg-color);
 }
 
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+    background-color: var(--inverted-bg-color);
+}
+  
+::-webkit-scrollbar-thumb {
+    background-color: var(--skeleton-color);
+    border: none;
+    border-radius: 20px;
+}
+  

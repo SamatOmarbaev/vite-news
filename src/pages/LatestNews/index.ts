@@ -1,0 +1,1 @@
+export { LatestNewsAsync as LatestNews } from "./ui/LatestNews.async";
