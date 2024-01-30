@@ -18,6 +18,10 @@
     color: var(--secondary-color) !important;
 }
 
+.css-16y9h98 {
+    color: var(--secondary-color);
+}
+
 .css-21ve8j {
     background-color: var(--inverted-bg-color);
 
@@ -27,6 +31,7 @@
 }
 
 .css-21ve8j.Mui-selected {
-    color: var(--primary-color) !important;
-    border: 1px solid var(--primary-color) !important;
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    background-color: var(--primary-color-rgba);
 }
