@@ -19,10 +19,13 @@
 }
 
 .css-21ve8j {
-    background-color: var(--inverted-bg-color);
+    background-color: var(--inverted-bg-color) !important;
+    color: var(--secondary-color) !important;
 
     &:hover {
-        background-color: var(--primary-color-rgba);
+        background-color: var(--primary-color-rgba) !important;
+        color: var(--primary-color) !important;
+        border: 1px solid var(--primary-color) !important;
     }
 }
 

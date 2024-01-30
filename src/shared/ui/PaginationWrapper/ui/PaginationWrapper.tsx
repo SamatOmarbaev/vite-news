@@ -3,8 +3,8 @@ import { CSSProperties, memo } from "react";
 import './PaginationWrapper.css'
 
 interface PaginationWrapperProps {
-    totalPage: number;
-    setCurrentPage: (num: number) => void
+  totalPage: number;
+  setCurrentPage: (num: number) => void
 }
 
 const styles: CSSProperties = {
