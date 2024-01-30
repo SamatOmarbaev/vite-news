@@ -1,0 +1,1 @@
+export { MainDetailsPageAsync as MainDetailsPage } from "./ui/MainDetailsPage.async";

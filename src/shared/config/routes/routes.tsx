@@ -2,7 +2,7 @@ export enum AppRoutes {
     MAIN = 'main',
     ABOUT = 'about',
     MAIN_NEWS = 'news',
-    NEW_PAGE = 'news_page',
+    MAIN_DETAILS = 'news_details',
 
     // last
     NOT_FOUND = 'not_found'
