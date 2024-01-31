@@ -8,6 +8,9 @@
 }
 
 /* label */
+.css-1pysi21-MuiFormLabel-root-MuiInputLabel-root {
+    color: var(--secondary-color) !important;
+}
 .css-1jy569b-MuiFormLabel-root-MuiInputLabel-root {
     color: var(--secondary-color) !important;
 }
@@ -15,6 +18,9 @@
     color: var(--secondary-color) !important;
 }
 .css-1jy569b-MuiFormLabel-root-MuiInputLabel-root.Mui-focused {
+    color: var(--primary-color) !important;
+}
+.css-1ald77x.Mui-focused {
     color: var(--primary-color) !important;
 }
 
