@@ -34,3 +34,7 @@
     border: 1px solid var(--primary-color) !important;
     background-color: var(--primary-color-rgba) !important;
 }
+
+.css-16y9h98 {
+    color: var(--secondary-color) !important;
+}
