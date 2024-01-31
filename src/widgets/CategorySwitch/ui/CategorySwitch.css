@@ -1,0 +1,55 @@
+.css-q8hpuo-MuiFormControl-root {
+    max-width: 150px;
+    margin-left: auto !important;
+}
+
+/* label */
+.css-1jy569b-MuiFormLabel-root-MuiInputLabel-root {
+    color: var(--secondary-color) !important;
+}
+.css-1jy569b-MuiFormLabel-root-MuiInputLabel-root.Mui-focused {
+    color: var(--primary-color) !important;
+}
+
+.css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root {
+    color: var(--secondary-color) !important;
+}
+
+.css-1yk1gt9-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root {
+    color: var(--secondary-color) !important;
+}
+
+/* svg icon */
+.css-hfutr2-MuiSvgIcon-root-MuiSelect-icon {
+    color: var(--secondary-color) !important;
+}
+.css-bpeome-MuiSvgIcon-root-MuiSelect-icon {
+    color: var(--secondary-color) !important;
+}
+
+/* field set */
+.css-1yk1gt9-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+    border-color: var(--primary-color) !important;
+}
+
+/* legeng */
+
+.css-14lo706 > span {
+    padding-right: 30px !important;
+}
+
+.css-1d3z3hw-MuiOutlinedInput-notchedOutline {
+    border-color: var(--secondary-color) !important;
+}
+
+
+/* list */
+.css-3dzjca-MuiPaper-root-MuiPopover-paper-MuiMenu-paper {
+    background-color: var(--inverted-bg-color) !important;
+    color: var(--secondary-color) !important;
+    max-height: calc(100% - 500px) !important;
+}
+
+.css-kk1bwy-MuiButtonBase-root-MuiMenuItem-root:hover {
+    background-color: var(--primary-color-rgba) !important;
+}

@@ -9,10 +9,10 @@ interface ArticleListProps {
 }
 
 const stylesList: CSSProperties = {
-  display: 'flex',
-  flexWrap: 'wrap',
-  justifyContent: 'space-evenly',
-  gap: '2rem'
+  display: 'grid',
+  gridTemplateColumns: 'repeat(auto-fill,minmax(300px, 1fr))',
+  justifyItems: 'center',
+  gap: '2rem 1rem',
 }
 
 const getSkeletons = () => (

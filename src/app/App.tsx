@@ -14,7 +14,11 @@ const contentStyle: React.CSSProperties = {
   width: '100%',
   overflowY: 'auto',
   padding: '1.25rem 2.5rem',
-  height: 'calc(100vh - var(--navbar-height))'
+  height: 'calc(100vh - var(--navbar-height))',
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'stretch',
+  rowGap: '2rem'
 };
 
 function App() {
