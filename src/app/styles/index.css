@@ -129,7 +129,7 @@ body {
   
 .app {
     min-height: 100vh;
-    color: var(--primary-color);
+    color: var(--primary-color) !important;
     background: var(--bg-color);
 }
 

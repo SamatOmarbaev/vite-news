@@ -16,7 +16,7 @@ export const CategorySwitch = memo(({categories, setSelectedCategory, selectedCa
 
   return (
     <FormControl fullWidth>
-      <InputLabel id="demo-simple-select-label">
+      <InputLabel id="demo-simple-select-label" size="small">
         {'Category'}
       </InputLabel>
       <Select
@@ -25,6 +25,7 @@ export const CategorySwitch = memo(({categories, setSelectedCategory, selectedCa
         value={selectedCategory}
         label="Age"
         onChange={handleChange}
+        size="small"
       >
         {categories.map((category) => (
           <MenuItem key={category} value={category}>{category}</MenuItem>
