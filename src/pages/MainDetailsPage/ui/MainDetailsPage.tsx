@@ -2,6 +2,7 @@ import { Button } from "@mui/material"
 import { ArticleDetails } from "entities/Article"
 import { CSSProperties, memo } from "react"
 import { useNavigate } from "react-router-dom"
+import './MainDetailsPage.css'
 
 const styles: CSSProperties = {
   display: 'flex',
@@ -10,7 +11,10 @@ const styles: CSSProperties = {
 }
 
 const btnStyles: CSSProperties = {
-  marginRight: 'auto'
+  marginRight: 'auto',
+  border: '1px solid var(--primary-color-rgba)',
+  color: 'var(--primary-color)',
+  backgroundColor: 'var(--inverted-bg-color)'
 }
 
 const MainDateilsPage = memo(() => {

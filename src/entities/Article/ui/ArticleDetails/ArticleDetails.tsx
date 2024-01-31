@@ -1,6 +1,5 @@
 // import { Article } from "../../model/types/Article"
 import { memo } from "react"
-import './ArticleDetails.css'
 import { useParams } from "react-router-dom"
 
 // interface ArticleDetailsProps {
