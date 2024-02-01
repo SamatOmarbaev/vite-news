@@ -5,7 +5,7 @@ import './CategorySwitch.css'
 
 interface CategorySwitchProps {
   categories?: CategoriesType[]
-  selectedCategory: string | null | undefined
+  selectedCategory: string | null
   setSelectedCategory: (value: string) => void
   isLoading?: boolean
 }
