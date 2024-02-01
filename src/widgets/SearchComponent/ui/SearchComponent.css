@@ -4,3 +4,9 @@
 .css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root {
     color: var(--secondary-color) !important;
 }
+.css-1v4ccyo.Mui-focused .MuiOutlinedInput-notchedOutline {
+    border-color: var(--primary-color) !important;
+}
+.css-1o6z5ngt {
+    color: var(--secondary-color) !important;
+}

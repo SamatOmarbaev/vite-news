@@ -29,7 +29,7 @@ const MainNews = memo(() => {
 
   return (
     <>
-      <div style={{display: 'flex', alignItems: 'center'}}>
+      <section style={{display: 'flex', alignItems: 'center'}}>
         <SearchComponent
           keywords={filters.keywords}
           setKeywords={(keywords) => changeFilter('keywords', keywords)}
@@ -41,14 +41,14 @@ const MainNews = memo(() => {
           selectedCategory={filters.category} 
           isLoading={isLoading}
         />
-      </div>
-      <div>
+      </section>
+      <section>
         <ArticleList items={data?.news} isLoading={isLoading} />
         <PaginationWrapper 
           totalPage={TOTAL_PAGE} 
           setCurrentPage={(pageNumber) => changeFilter('pageNumber', pageNumber)} 
         />
-      </div>
+      </section>
     </>
   )
 })
