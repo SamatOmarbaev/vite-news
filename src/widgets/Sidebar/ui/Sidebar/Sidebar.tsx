@@ -6,6 +6,10 @@ import { items } from "../../model/utils/items";
 
 const styles: React.CSSProperties = {
   background: 'var(--inverted-bg-color)',
+  width: '50px',
+  flex: '0 0 50px',
+  maxWidth: '50px',
+  minWidth: '50px',
 }
 
 export const Sidebar = memo(() => {

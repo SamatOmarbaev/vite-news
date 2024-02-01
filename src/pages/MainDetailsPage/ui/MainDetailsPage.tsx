@@ -3,6 +3,7 @@ import { ArticleDetails } from "entities/Article"
 import { CSSProperties, memo } from "react"
 import { useNavigate } from "react-router-dom"
 import './MainDetailsPage.css'
+import { useTranslation } from "react-i18next"
 
 const styles: CSSProperties = {
   display: 'flex',
@@ -18,6 +19,7 @@ const btnStyles: CSSProperties = {
 }
 
 const MainDateilsPage = memo(() => {
+  const { t } = useTranslation()
   const navigate = useNavigate()
 
   return (
@@ -27,7 +29,7 @@ const MainDateilsPage = memo(() => {
         variant="outlined" 
         onClick={() => navigate(-1)}
       >
-        {('Назад')}
+        {t('Назад')}
       </Button>
       <ArticleDetails />
     </div>
