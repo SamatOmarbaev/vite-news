@@ -16,7 +16,7 @@ export interface CategoriesApiResponse {
 export interface Filters {
     page_number: number;
     page_size: number;
-    category: CategoriesType | null;
+    category: CategoriesType | undefined;
     keywords: string;
 }
   
