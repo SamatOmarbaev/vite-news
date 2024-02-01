@@ -1,11 +1,10 @@
 import axios from "axios";
+import { API_KEY, BASE_URL } from "shared/api/apiNews";
+import { CategoriesApiResponse } from "../types/NewsApiResponse";
 
-const BASE_URL = import.meta.env.VITE_NEWS_BASE_API_URL;
-const API_KEY = import.meta.env.VITE_NEWS_API_KEY;
-
-export const getByCategories = async () => {
+export const getByCategories = async(): Promise<CategoriesApiResponse> => {
   try {
-    const response = await axios.get(`${BASE_URL}available/categories`, {
+    const response = await axios.get<CategoriesApiResponse>(`${BASE_URL}available/categories`, {
       params: {
         apiKey: API_KEY,
       }
@@ -14,5 +13,6 @@ export const getByCategories = async () => {
     return response.data
   } catch (e) {
     console.log(e);
+    return {categories: [], description: '', status: 'error'}
   }
 }

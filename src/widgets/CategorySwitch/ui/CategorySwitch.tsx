@@ -1,18 +1,29 @@
-import { FormControl, InputLabel, MenuItem, Select, SelectChangeEvent } from "@mui/material"
+import { FormControl, InputLabel, MenuItem, Select, SelectChangeEvent, Skeleton } from "@mui/material"
 import { CategoriesType } from "entities/Article/model/types/Article"
-import { memo } from "react"
+import { memo, useCallback } from "react"
 import './CategorySwitch.css'
 
 interface CategorySwitchProps {
-    categories: CategoriesType[]
-    setSelectedCategory: (value: string) => void
-    selectedCategory: string
+  categories?: CategoriesType[]
+  selectedCategory: string | undefined
+  setSelectedCategory: (value: string) => void
+  isLoading?: boolean
 }
 
-export const CategorySwitch = memo(({categories, setSelectedCategory, selectedCategory}: CategorySwitchProps) => {
-  const handleChange = (event: SelectChangeEvent) => {
+export const CategorySwitch = memo((props: CategorySwitchProps) => {
+  const {categories, setSelectedCategory, selectedCategory, isLoading} = props
+
+  const handleChange = useCallback((event: SelectChangeEvent) => {
     setSelectedCategory(event.target.value as string);
-  };
+  }, [setSelectedCategory])
+
+  if (isLoading) {
+    return (
+      <div style={{marginLeft: '1rem'}}>
+        <Skeleton variant="rounded" width={150} height={40} />
+      </div>
+    )
+  }
 
   return (
     <FormControl fullWidth>
@@ -27,7 +38,7 @@ export const CategorySwitch = memo(({categories, setSelectedCategory, selectedCa
         onChange={handleChange}
         size="small"
       >
-        {categories.map((category) => (
+        {categories?.map((category) => (
           <MenuItem key={category} value={category}>{category}</MenuItem>
         ))}
       </Select>

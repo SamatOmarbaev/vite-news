@@ -4,8 +4,8 @@ import { ArticleListItem } from '../ArticleListItem/ArticleListItem';
 import { ArticleListItemSkeleton } from '../ArticleListItem/ArticleListItemSkeleton';
 
 interface ArticleListProps {
-    items: Article[];
-    isLoading?: boolean;
+  items?: Article[];
+  isLoading?: boolean;
 }
 
 const stylesList: CSSProperties = {
@@ -38,8 +38,8 @@ export const ArticleList = memo(({items, isLoading}: ArticleListProps) => {
   
   return (
     <ul style={stylesList}>
-      {items.length > 0
-        ?   items.map(renderArticles)
+      {items!.length > 0
+        ?   items?.map(renderArticles)
         :   null}
     </ul>
   )

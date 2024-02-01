@@ -1,21 +1,24 @@
 import axios from "axios";
+import { API_KEY, BASE_URL } from "shared/api/apiNews";
+import { NewsApiResponse, ParamsType } from "../types/NewsApiResponse";
 
-const BASE_URL = import.meta.env.VITE_NEWS_BASE_API_URL;
-const API_KEY = import.meta.env.VITE_NEWS_API_KEY;
-
-export const getNews = async ({page_number = 1, page_size = 10, category = ''}) => {
+export const getNews = async(params?: ParamsType): Promise<NewsApiResponse> => {
   try {
-    const response = await axios.get(`${BASE_URL}search`, {
+    const {page_number = 1, page_size = 10, category, keywords} = params || {}
+
+    const response = await axios.get<NewsApiResponse>(`${BASE_URL}search`, {
       params: {
         apiKey: API_KEY,
         page_number, 
         page_size,
-        category
+        category,
+        keywords
       }
     })
 
     return response.data
   } catch (e) {
     console.log(e);
+    return {news: [], page: 1, status: 'error'}
   }
 }

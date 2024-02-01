@@ -32,6 +32,13 @@ const styleP: CSSProperties = {
   display: '-webkit-box',
 }
 
+const styleImg: CSSProperties = {
+  backgroundColor: 'var(--card-bg)',
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center'
+}
+
 export const ArticleListItem = memo(({item}: ArticleListItemProps) => {
   const navigate = useNavigate()
 
@@ -49,7 +56,8 @@ export const ArticleListItem = memo(({item}: ArticleListItemProps) => {
           component="img"
           height="160"
           image={item.image}
-          alt={item.title}
+          alt="Image"
+          style={styleImg}
         />}
         <CardContent>
           <Typography gutterBottom variant="subtitle1" component="h2" style={styleH2}>

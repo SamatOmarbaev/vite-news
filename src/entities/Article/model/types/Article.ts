@@ -1,13 +1,13 @@
 export interface Article {
-    author: string
-    category: CategoriesType[]
-    description: string
-    id: string
-    image: string
-    language: string
-    published: string
-    title: string
-    url: string
+  author: string
+  category: CategoriesType[]
+  description: string
+  id: string
+  image: string
+  language: string
+  published: string
+  title: string
+  url: string
 }
 
 export type CategoriesType =
