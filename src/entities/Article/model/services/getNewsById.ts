@@ -1,7 +1,5 @@
 import axios from "axios";
-
-const BASE_URL = import.meta.env.VITE_NEWS_BASE_API_URL;
-const API_KEY = import.meta.env.VITE_NEWS_API_KEY;
+import { API_KEY, BASE_URL } from "shared/api/apiNews";
 
 interface GetNewsByIdProps {
   newsId: string

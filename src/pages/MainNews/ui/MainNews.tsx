@@ -1,26 +1,31 @@
 import { ArticleList } from "entities/Article"
-import { useCallback, useEffect, useState } from "react"
 import { PaginationWrapper } from "shared/ui/PaginationWrapper"
 import { getNews } from "../model/services/getNews"
-import { getByCategories } from "../model/services/getByCategories"
+import { useCallback, useEffect, useState } from "react"
+import { PAGE_SIZE, TOTAL_PAGE } from "shared/const/constants"
 import { CategorySwitch } from "widgets/CategorySwitch"
+import { getByCategories } from "../model/services/getByCategories"
+import { SearchComponent } from "widgets/SearchComponent"
+import { useDebounce } from "shared/lib/hooks/useDebounce"
 
 const MainNews = () => {
   const [news, setNews] = useState([])
   const [categories, setCategories] = useState([])
-  const [selectedCategory, setSelectedCategory] = useState('')
+  const [selectedCategory, setSelectedCategory] = useState(undefined)
+  const [keywords, setKeywords] = useState('')
   const [isLoading, setIsLoading] = useState(false)
   const [currentPage, setCurrentPage] = useState(1)
-  const totalPage = 30
-  const pageSize = 10
+
+  const debouncedKeyword = useDebounce(keywords, 1500)
 
   const fetchNews = useCallback(async(currentPage: number) => {
     try {
       setIsLoading(true)
       const response = await getNews({
         page_number: currentPage,
-        page_size: pageSize,
-        category: selectedCategory
+        page_size: PAGE_SIZE,
+        category: selectedCategory,
+        keywords: debouncedKeyword
       })
 
       setNews(response.news);
@@ -30,7 +35,7 @@ const MainNews = () => {
     } finally {
       setIsLoading(false)
     }
-  }, [selectedCategory]) 
+  }, [selectedCategory, debouncedKeyword]) 
 
   const fetchNewsByCategories = async () => {
     try {
@@ -52,14 +57,20 @@ const MainNews = () => {
 
   return (
     <>
-      <CategorySwitch 
-        categories={categories} 
-        setSelectedCategory={setSelectedCategory} 
-        selectedCategory={selectedCategory} 
-      />
+      <div style={{display: 'flex', alignItems: 'center'}}>
+        <SearchComponent
+          keywords={keywords}
+          setKeywords={setKeywords}
+        />
+        <CategorySwitch 
+          categories={categories} 
+          setSelectedCategory={setSelectedCategory} 
+          selectedCategory={selectedCategory} 
+        />
+      </div>
       <div>
         <ArticleList items={news} isLoading={isLoading} />
-        <PaginationWrapper totalPage={totalPage} setCurrentPage={setCurrentPage} />
+        <PaginationWrapper totalPage={TOTAL_PAGE} setCurrentPage={setCurrentPage} />
       </div>
     </>
   )

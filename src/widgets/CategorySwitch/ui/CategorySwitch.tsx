@@ -4,9 +4,9 @@ import { memo } from "react"
 import './CategorySwitch.css'
 
 interface CategorySwitchProps {
-    categories: CategoriesType[]
-    setSelectedCategory: (value: string) => void
-    selectedCategory: string
+  categories: CategoriesType[]
+  setSelectedCategory: (value: string) => void
+  selectedCategory?: string
 }
 
 export const CategorySwitch = memo(({categories, setSelectedCategory, selectedCategory}: CategorySwitchProps) => {
