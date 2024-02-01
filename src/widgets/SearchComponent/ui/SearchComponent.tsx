@@ -1,4 +1,4 @@
-import { TextField } from '@mui/material';
+import { Skeleton, TextField } from '@mui/material';
 import { CSSProperties, memo } from 'react';
 import './SearchComponent.css'
 
@@ -9,9 +9,16 @@ const styles: CSSProperties = {
 interface SearchComponentProps {
   keywords: string;
   setKeywords: (value: string) => void
+  isLoading?: boolean;
 }
 
-export const SearchComponent = memo(({keywords, setKeywords}: SearchComponentProps) => {
+export const SearchComponent = memo(({keywords, setKeywords, isLoading}: SearchComponentProps) => {
+  if (isLoading) {
+    return (
+      <Skeleton variant="rounded" width={'100%'} height={40} />
+    )
+  }
+  
   return (
     <TextField 
       id="outlined-basic" 

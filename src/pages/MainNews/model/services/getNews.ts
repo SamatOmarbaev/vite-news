@@ -4,7 +4,7 @@ import { NewsApiResponse, ParamsType } from "../types/NewsApiResponse";
 
 export const getNews = async(params?: ParamsType): Promise<NewsApiResponse> => {
   try {
-    const {page_number = 1, page_size = 10, category = '', keywords = ''} = params || {}
+    const {page_number = 1, page_size = 10, category, keywords} = params || {}
 
     const response = await axios.get<NewsApiResponse>(`${BASE_URL}search`, {
       params: {
