@@ -5,8 +5,8 @@ import './CategorySwitch.css'
 
 interface CategorySwitchProps {
   categories?: CategoriesType[]
-  selectedCategory: string | undefined
-  setSelectedCategory: (value: string) => void
+  selectedCategory: CategoriesType | undefined
+  setSelectedCategory: (value: CategoriesType | null) => void
   // isLoading?: boolean
 }
 
@@ -14,7 +14,7 @@ export const CategorySwitch = memo((props: CategorySwitchProps) => {
   const {categories, setSelectedCategory, selectedCategory} = props
 
   const handleChange = useCallback((event: SelectChangeEvent) => {
-    setSelectedCategory(event.target.value as string);
+    setSelectedCategory(event.target.value as CategoriesType);
   }, [setSelectedCategory])
 
   // if (isLoading) {

@@ -19,7 +19,7 @@ export const NotFoundPage = memo(() => {
       extra={
         <Button 
           type='primary'
-          onClick={() => navigate(RoutePath.main)}
+          onClick={() => navigate(RoutePath.news)}
         >
           {t('Назад домой')}
         </Button>
