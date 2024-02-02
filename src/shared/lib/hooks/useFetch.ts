@@ -25,6 +25,7 @@ export const useFetch = <T, P>(fetchFunc: FetchFunction<P, T>, params?: P): UseF
         const result = await fetchFunc(params);
   
         setData(result);
+        setIsLoading(false)
       } catch (e) {
         setError(e as Error);
       } finally {

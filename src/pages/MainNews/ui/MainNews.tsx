@@ -1,14 +1,8 @@
-import { ArticleList } from "entities/Article"
-import { PaginationWrapper } from "shared/ui/PaginationWrapper"
-import { getNews } from "../model/services/getNews"
 import { memo } from "react"
-import { PAGE_SIZE, TOTAL_PAGE } from "shared/const/constants"
-import { CategorySwitch } from "widgets/CategorySwitch"
-import { getByCategories } from "../model/services/getByCategories"
-import { SearchComponent } from "widgets/SearchComponent"
-import { useDebounce } from "shared/lib/hooks/useDebounce"
-import { useFetch } from "shared/lib/hooks/useFetch"
+import { PAGE_SIZE } from "shared/const/constants"
 import { useFilters } from "shared/lib/hooks/useFilters"
+import { MainNewsFilters } from "./MainNewsFilters/MainNewsFilters"
+import { MainNewsContent } from "./MainNewsContent/MainNewsContent"
 
 const MainNews = memo(() => {
   const {filters, changeFilter} = useFilters({
@@ -18,37 +12,18 @@ const MainNews = memo(() => {
     keywords: ''
   })
 
-  const debouncedKeyword = useDebounce(filters.keywords, 1000)
-
-  const {data, isLoading} = useFetch(getNews, {
-    ...filters,
-    keywords: debouncedKeyword
-  })
-
-  const {data: dataCategories} = useFetch(getByCategories)
-
   return (
     <>
-      <section style={{display: 'flex', alignItems: 'center'}}>
-        <SearchComponent
-          keywords={filters.keywords}
-          setKeywords={(keywords) => changeFilter('keywords', keywords)}
-          isLoading={isLoading}
-        />
-        <CategorySwitch 
-          categories={dataCategories?.categories} 
-          setSelectedCategory={(category) => changeFilter('category', category)} 
-          selectedCategory={filters.category} 
-          isLoading={isLoading}
-        />
-      </section>
-      <section>
-        <ArticleList items={data?.news} isLoading={isLoading} />
-        <PaginationWrapper 
-          totalPage={TOTAL_PAGE} 
-          setCurrentPage={(pageNumber) => changeFilter('pageNumber', pageNumber)} 
-        />
-      </section>
+      <MainNewsFilters 
+        keywords={filters.keywords}
+        category={filters.category}
+        changeFilter={changeFilter}
+      />
+      <MainNewsContent 
+        changeFilter={changeFilter} 
+        filters={filters} 
+        keywords={filters.keywords}
+      />
     </>
   )
 })
