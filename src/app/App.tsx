@@ -2,7 +2,6 @@ import { AppRouter } from './providers/router'
 import { Navbar } from 'widgets/Navbar'
 import { Layout } from 'antd'
 import { Content } from 'antd/es/layout/layout'
-import { Sidebar } from 'widgets/Sidebar'
 import { Suspense } from 'react'
 import { Loader } from 'shared/ui/Loader'
 
@@ -27,7 +26,6 @@ function App() {
       <Suspense fallback={<Loader />}>
         <Navbar />
         <Layout style={{background: 'transparent', display: 'flex', flexDirection: 'inherit'}}>
-          {/* <Sidebar /> */}
           <Content style={contentStyle}>
             <AppRouter />
           </Content>
