@@ -27,7 +27,7 @@ function App() {
       <Suspense fallback={<Loader />}>
         <Navbar />
         <Layout style={{background: 'transparent', display: 'flex', flexDirection: 'inherit'}}>
-          <Sidebar />
+          {/* <Sidebar /> */}
           <Content style={contentStyle}>
             <AppRouter />
           </Content>

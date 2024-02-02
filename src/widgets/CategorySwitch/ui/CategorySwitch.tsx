@@ -1,4 +1,4 @@
-import { FormControl, InputLabel, MenuItem, Select, SelectChangeEvent, Skeleton } from "@mui/material"
+import { FormControl, InputLabel, MenuItem, Select, SelectChangeEvent } from "@mui/material"
 import { CategoriesType } from "entities/Article/model/types/Article"
 import { memo, useCallback } from "react"
 import './CategorySwitch.css'
@@ -7,23 +7,23 @@ interface CategorySwitchProps {
   categories?: CategoriesType[]
   selectedCategory: string | undefined
   setSelectedCategory: (value: string) => void
-  isLoading?: boolean
+  // isLoading?: boolean
 }
 
 export const CategorySwitch = memo((props: CategorySwitchProps) => {
-  const {categories, setSelectedCategory, selectedCategory, isLoading} = props
+  const {categories, setSelectedCategory, selectedCategory} = props
 
   const handleChange = useCallback((event: SelectChangeEvent) => {
     setSelectedCategory(event.target.value as string);
   }, [setSelectedCategory])
 
-  if (isLoading) {
-    return (
-      <div style={{marginLeft: '1rem'}}>
-        <Skeleton variant="rounded" width={150} height={40} />
-      </div>
-    )
-  }
+  // if (isLoading) {
+  //   return (
+  //     <div style={{marginLeft: '1rem'}}>
+  //       <Skeleton variant="rounded" width={150} height={40} />
+  //     </div>
+  //   )
+  // }
 
   return (
     <FormControl fullWidth>
