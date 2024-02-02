@@ -1,4 +1,4 @@
-import { CSSProperties, useMemo } from "react";
+import { CSSProperties, memo, useMemo } from "react";
 import { Link } from "react-router-dom";
 import { NavbarItemsList } from "../../model/selectors/getItem";
 import cls from './NavbarLow.module.css'
@@ -12,7 +12,7 @@ const styles: CSSProperties = {
   fontWeight: '900',
 }
 
-export const NavbarLow = () => {
+export const NavbarLow = memo(() => {
   const itemList = useMemo(() => NavbarItemsList.map((item) => {
     return (
       <Link 
@@ -30,4 +30,4 @@ export const NavbarLow = () => {
       {itemList}
     </nav>
   )
-}
+})

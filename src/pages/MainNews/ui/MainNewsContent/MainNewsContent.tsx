@@ -1,6 +1,6 @@
 import { ArticleList } from "entities/Article"
 import { getNews } from "../../model/services/getNews"
-import { Filters } from "../../model/types/NewsApiResponse"
+import { Filters, NewsApiResponse, ParamsType } from "../../model/types/NewsApiResponse"
 import { CSSProperties } from "react"
 import { TOTAL_PAGE } from "shared/const/constants"
 import { useDebounce } from "shared/lib/hooks/useDebounce"
@@ -8,9 +8,8 @@ import { useFetch } from "shared/lib/hooks/useFetch"
 import { PaginationWrapper } from "shared/ui/PaginationWrapper"
 
 interface MainNewsContentProps {
-    changeFilter: (v: string, t: string | number) => void
-    keywords: string
-    filters: Filters
+  changeFilter: (key: string, value: string | number | null) => void
+  filters: Filters
 }
 
 const styles: CSSProperties = {
@@ -18,11 +17,11 @@ const styles: CSSProperties = {
 }
 
 export const MainNewsContent = (props: MainNewsContentProps) => {
-  const {changeFilter, keywords, filters} = props
+  const {changeFilter, filters} = props
 
-  const debouncedKeyword = useDebounce(keywords, 1000)
+  const debouncedKeyword = useDebounce(filters.keywords, 1000)
 
-  const {data, isLoading} = useFetch(getNews, {
+  const {data, isLoading} = useFetch<NewsApiResponse, ParamsType>(getNews, {
     ...filters,
     keywords: debouncedKeyword
   })
@@ -32,7 +31,7 @@ export const MainNewsContent = (props: MainNewsContentProps) => {
       <ArticleList items={data?.news} isLoading={isLoading} />
       <PaginationWrapper 
         totalPage={TOTAL_PAGE} 
-        setCurrentPage={(pageNumber) => changeFilter('pageNumber', pageNumber)} 
+        setCurrentPage={(page_number) => changeFilter('page_number', page_number)} 
       />
     </section>
   )

@@ -15,14 +15,12 @@ const MainNews = memo(() => {
   return (
     <>
       <MainNewsFilters 
-        keywords={filters.keywords}
-        category={filters.category}
+        filters={filters}
         changeFilter={changeFilter}
       />
       <MainNewsContent 
         changeFilter={changeFilter} 
         filters={filters} 
-        keywords={filters.keywords}
       />
     </>
   )

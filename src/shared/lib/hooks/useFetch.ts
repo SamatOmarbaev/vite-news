@@ -2,13 +2,13 @@ import { useEffect, useState } from "react"
 
 
 interface FetchFunction<P, T> {
-    (params?: P): Promise<T>;
+  (params?: P): Promise<T>;
 }
   
 interface UseFethcResult<T> {
-    data: T | null | undefined;
-    isLoading: boolean;
-    error: Error | null;
+  data: T | null | undefined;
+  isLoading: boolean;
+  error: Error | null;
 }
 
 export const useFetch = <T, P>(fetchFunc: FetchFunction<P, T>, params?: P): UseFethcResult<T> => {

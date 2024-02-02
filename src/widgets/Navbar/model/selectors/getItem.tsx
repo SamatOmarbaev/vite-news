@@ -3,10 +3,6 @@ import { NavbarItemType } from "../types/NavbarItemType";
 
 export const NavbarItemsList: NavbarItemType[] = [
   {
-    path: RoutePath.main,
-    text: 'Home',
-  },
-  {
     path: RoutePath.news,
     text: 'News',
   },

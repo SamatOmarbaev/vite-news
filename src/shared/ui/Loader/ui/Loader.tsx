@@ -5,7 +5,8 @@ const styles: React.CSSProperties = {
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
-  height: '100%'
+  height: '100%',
+  color: 'var(--primary-color)'
 }
 
 export const Loader = () => {
