@@ -13,7 +13,7 @@ const styleCard: CSSProperties = {
   background: 'var(--inverted-bg-color)',
   width: '300px',
   border: '1px solid var(--inverted-bg-color)',
-  height: '100%',
+  height: '250px',
   color: 'var(--primary-color)'
 }
 
@@ -48,13 +48,13 @@ export const ArticleListItem = memo(({item}: ArticleListItemProps) => {
 
   return (
     <Card 
-      style={styleCard} sx={{ maxWidth: 345 }} 
+      style={styleCard} sx={{ maxWidth: 300 }} 
       onClick={onOpenArticle}
     >
       <CardActionArea>
         {item.image && <CardMedia
           component="img"
-          height="160"
+          height="125"
           image={item.image}
           alt="Image"
           style={styleImg}

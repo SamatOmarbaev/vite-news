@@ -6,8 +6,4 @@ export const NavbarItemsList: NavbarItemType[] = [
     path: RoutePath.news,
     text: 'News',
   },
-  {
-    path: RoutePath.latest,
-    text: 'Latest News',
-  },
 ];
