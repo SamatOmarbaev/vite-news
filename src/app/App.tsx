@@ -5,18 +5,16 @@ import { Content } from 'antd/es/layout/layout'
 import { Suspense } from 'react'
 import { Loader } from 'shared/ui/Loader'
 
-
 const contentStyle: React.CSSProperties = {
   color: 'var(--primary-color)',
   backgroundColor: 'var(--bg-color)',
   flexGrow: 1,
   width: '100%',
-  overflowY: 'hidden',
+  overflowY: 'auto',
   padding: '1.25rem 2.5rem',
   height: 'calc(100vh - var(--navbar-height))',
   display: 'flex',
   flexDirection: 'column',
-  alignItems: 'stretch',
   rowGap: '2rem'
 };
 

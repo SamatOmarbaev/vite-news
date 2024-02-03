@@ -10,7 +10,7 @@ interface PaginationWrapperProps {
 const styles: CSSProperties = {
   display: 'flex',
   justifyContent: 'center',
-  margin: '1.5rem 0 1rem',
+  margin: '1.5rem 0 0',
 }
 
 export const PaginationWrapper = memo(({totalPage, setCurrentPage}: PaginationWrapperProps) => {
