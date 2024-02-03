@@ -1,11 +1,11 @@
 import { Box, Card, CardContent, CardMedia, Typography } from "@mui/material"
-import { RoutePath } from "app/providers/router/ui/config"
+// import { RoutePath } from "app/providers/router/ui/config"
 import { Article } from "entities/Article"
-import { CSSProperties, memo, useCallback } from "react"
-import { useNavigate } from "react-router-dom"
+import { CSSProperties, memo } from "react"
+// import { useNavigate } from "react-router-dom"
 
 interface RecItemProps {
-    item: Article
+  item: Article
 }
   
 const styleCard: CSSProperties = {
@@ -42,16 +42,16 @@ const styleImg: CSSProperties = {
 }
 
 export const RecItemCard = memo(({item}: RecItemProps) => {
-  const navigate = useNavigate()
+  // const navigate = useNavigate()
 
-  const onOpenArticle = useCallback(() => {
-    navigate(RoutePath.news_details + item.id)
-  }, [navigate, item.id])
+  // const onOpenArticle = useCallback(() => {
+  //   navigate(RoutePath.news_details + item.id)
+  // }, [navigate, item.id])
 
   return (
     <Card 
       sx={{ display: 'flex' }} 
-      onClick={onOpenArticle} 
+      // onClick={onOpenArticle} 
       style={styleCard}
     >
       <CardMedia

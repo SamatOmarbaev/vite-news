@@ -14,8 +14,8 @@ const stylesList: CSSProperties = {
   justifyItems: 'center',
   gap: '2rem 1rem',
   overflowY: 'scroll',
-  maxHeight: 'calc(100vh - var(--navbar-height)',
-  padding: '2rem 1rem',
+  maxHeight: 'calc(100vh - var(--navbar-height))',
+  padding: '2rem',
 }
 
 const getSkeletons = () => (

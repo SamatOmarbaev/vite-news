@@ -1,28 +1,24 @@
-import { getByCategories } from "../../model/services/getByCategories"
-import { CategoriesApiResponse, Filters } from "../../model/types/NewsApiResponse"
-import { useFetch } from "shared/lib/hooks/useFetch"
+import { useAppSelector } from "shared/lib/hooks/useAppSelector"
+import { useGetByCategoriesQuery } from "../../model/services/getByCategories"
 import { CategorySwitch } from "widgets/CategorySwitch"
 import { SearchComponent } from "widgets/SearchComponent"
+import { useAppDispatch } from "shared/lib/hooks/useAppDispatch"
+import { newsSliceActions } from "pages/MainNews/model/slices/newsSlice"
 
-interface MainNewsFiltersProps {
-  filters: Filters
-  changeFilter: (key: string, value: string | number | null) => void
-}
-
-export const MainNewsFilters = (props: MainNewsFiltersProps) => {
-  const {filters, changeFilter} = props
-
-  const {data: dataCategories} = useFetch<CategoriesApiResponse, null>(getByCategories)
+export const MainNewsFilters = () => {
+  const dispatch = useAppDispatch()
+  const filters = useAppSelector(state => state.news.filters)
+  const { data } = useGetByCategoriesQuery(null)
 
   return (
     <section style={{display: 'flex', alignItems: 'center'}}>
       <SearchComponent
         keywords={filters.keywords}
-        setKeywords={(keywords) => changeFilter('keywords', keywords)}
+        setKeywords={(keywords) => dispatch(newsSliceActions.setFilters({key: 'keywords', value: keywords}))}
       />
       <CategorySwitch 
-        categories={dataCategories?.categories} 
-        setSelectedCategory={(category) => changeFilter('category', category)} 
+        categories={data?.categories} 
+        setSelectedCategory={(category) => dispatch(newsSliceActions.setFilters({key: 'category', value: category}))} 
         selectedCategory={filters.category} 
       />
     </section>
