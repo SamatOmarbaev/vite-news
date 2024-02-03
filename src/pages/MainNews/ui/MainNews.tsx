@@ -1,28 +1,18 @@
-import { memo } from "react"
-import { PAGE_SIZE } from "shared/const/constants"
-import { useFilters } from "shared/lib/hooks/useFilters"
-import { MainNewsFilters } from "./MainNewsFilters/MainNewsFilters"
-import { MainNewsContent } from "./MainNewsContent/MainNewsContent"
+import { CSSProperties, memo } from "react"
+import { AllNews } from "./AllNews/AllNews"
+import LatestNews from "./LatestNews/LatestNews"
+
+const styles: CSSProperties = {
+  display: 'flex',
+  gap: '2rem'
+}
 
 const MainNews = memo(() => {
-  const {filters, changeFilter} = useFilters({
-    page_number: 1,
-    page_size: PAGE_SIZE,
-    category: undefined,
-    keywords: ''
-  })
-
   return (
-    <>
-      <MainNewsFilters 
-        filters={filters}
-        changeFilter={changeFilter}
-      />
-      <MainNewsContent 
-        changeFilter={changeFilter} 
-        filters={filters} 
-      />
-    </>
+    <section style={styles}>
+      <AllNews />
+      <LatestNews />
+    </section>
   )
 })
 

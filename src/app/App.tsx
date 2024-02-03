@@ -11,7 +11,7 @@ const contentStyle: React.CSSProperties = {
   backgroundColor: 'var(--bg-color)',
   flexGrow: 1,
   width: '100%',
-  overflowY: 'auto',
+  overflowY: 'hidden',
   padding: '1.25rem 2.5rem',
   height: 'calc(100vh - var(--navbar-height))',
   display: 'flex',

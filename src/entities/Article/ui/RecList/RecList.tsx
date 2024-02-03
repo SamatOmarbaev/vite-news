@@ -1,7 +1,7 @@
 import { CSSProperties, memo } from 'react';
 import { Article } from '../../model/types/Article';
-import { ArticleListItem } from '../ArticleListItem/ArticleListItem';
-import { ArticleListItemSkeleton } from '../ArticleListItem/ArticleListItemSkeleton';
+import { RecItemSkeleton } from '../RecItemCard/RecItemSkeleton';
+import { RecItemCard } from '../RecItemCard/RecItemCard';
 
 interface ArticleListProps {
   items?: Article[];
@@ -13,19 +13,22 @@ const stylesList: CSSProperties = {
   gridTemplateColumns: 'repeat(auto-fill,minmax(300px, 1fr))',
   justifyItems: 'center',
   gap: '2rem 1rem',
+  overflowY: 'scroll',
+  maxHeight: 'calc(100vh - var(--navbar-height)',
+  padding: '2rem 1rem',
 }
 
 const getSkeletons = () => (
-  new Array(6)
+  new Array(12)
     .fill(0)
     .map((_, index) => (
-      <ArticleListItemSkeleton key={index} />
+      <RecItemSkeleton key={index} />
     ))
 );
 
-export const ArticleList = memo(({items, isLoading}: ArticleListProps) => {
+export const RecList = memo(({items, isLoading}: ArticleListProps) => {
   const renderArticles = (item: Article) => (
-    <ArticleListItem item={item} key={item.id} />
+    <RecItemCard item={item} key={item.id} />
   )
 
   if (isLoading) {
