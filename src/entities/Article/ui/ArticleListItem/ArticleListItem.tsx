@@ -1,9 +1,9 @@
 import { Card, CardActionArea, CardContent, CardMedia, Typography } from "@mui/material"
 import { Article } from "../../model/types/Article"
-import { CSSProperties, memo, useCallback } from "react"
+import { CSSProperties, memo } from "react"
 import { formatTimeAgo } from "shared/lib/helpers/formatTimeAgo"
-import { useNavigate } from "react-router-dom"
-import { RoutePath } from "app/providers/router/ui/config"
+// import { useNavigate } from "react-router-dom"
+// import { RoutePath } from "app/providers/router/ui/config"
 
 interface ArticleListItemProps {
   item: Article
@@ -40,16 +40,16 @@ const styleImg: CSSProperties = {
 }
 
 export const ArticleListItem = memo(({item}: ArticleListItemProps) => {
-  const navigate = useNavigate()
+  // const navigate = useNavigate()
 
-  const onOpenArticle = useCallback(() => {
-    navigate(RoutePath.news_details + item.id)
-  }, [navigate, item.id])
+  // const onOpenArticle = useCallback(() => {
+  //   navigate(RoutePath.news_details + item.id)
+  // }, [navigate, item.id])
 
   return (
     <Card 
       style={styleCard} sx={{ maxWidth: 300 }} 
-      onClick={onOpenArticle}
+      // onClick={onOpenArticle}
     >
       <CardActionArea>
         {item.image && <CardMedia
