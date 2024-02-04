@@ -1,6 +1,6 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
+import { CategoriesApiResponse } from 'entities/category'
 import { API_KEY, BASE_URL } from 'shared/api/apiNews'
-import { CategoriesApiResponse } from '../types/NewsApiResponse'
 
 export const categoriesNewsApi = createApi({
   reducerPath: 'categoriesNewsApi',

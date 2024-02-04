@@ -1,9 +1,9 @@
 import { Button } from "@mui/material"
-import { ArticleDetails } from "entities/Article"
 import { memo } from "react"
 import { useNavigate } from "react-router-dom"
 import './MainDetailsPage.css'
 import { useTranslation } from "react-i18next"
+import { NewDetails } from "entities/New"
 
 const MainDateilsPage = memo(() => {
   const { t } = useTranslation()
@@ -18,7 +18,7 @@ const MainDateilsPage = memo(() => {
       >
         {t('Назад')}
       </Button>
-      <ArticleDetails />
+      <NewDetails />
     </div>
   )
 })
