@@ -1,0 +1,14 @@
+.headerHigh {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+  
+.logo {
+    fill: var(--secondary-color);
+}
+  
+.userBtn {
+    padding: 0;
+    margin-left: auto;
+}

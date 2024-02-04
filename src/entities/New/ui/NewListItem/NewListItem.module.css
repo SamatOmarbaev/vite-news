@@ -1,0 +1,29 @@
+.card {
+    background: var(--inverted-bg-color) !important;
+    width: 300px !important;
+    border: 1px solid var(--inverted-bg-color) !important;
+    height: 250px !important;
+    color: var(--primary-color) !important;
+}
+
+.title {
+    overflow: hidden;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+}
+
+.paragraph {
+    color: var(--secondary-color) !important;
+    overflow: hidden;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+}
+
+.image {
+    background-color: var(--card-bg) !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+}

@@ -1,5 +1,5 @@
 import { Pagination } from "@mui/material"
-import { CSSProperties, memo } from "react";
+import { memo } from "react";
 import './PaginationWrapper.css'
 
 interface PaginationWrapperProps {
@@ -7,16 +7,10 @@ interface PaginationWrapperProps {
   setCurrentPage: (num: number) => void
 }
 
-const styles: CSSProperties = {
-  display: 'flex',
-  justifyContent: 'center',
-  margin: '1.5rem 0 0',
-}
-
 export const PaginationWrapper = memo(({totalPage, setCurrentPage}: PaginationWrapperProps) => {
   return (
     <Pagination 
-      style={styles}
+      className={'pagination'}
       count={totalPage} 
       variant="outlined" 
       shape="rounded" 

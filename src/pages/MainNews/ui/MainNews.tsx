@@ -1,15 +1,11 @@
-import { CSSProperties, memo } from "react"
+import { memo } from "react"
 import { AllNews } from "./AllNews/AllNews"
 import LatestNews from "./LatestNews/LatestNews"
-
-const styles: CSSProperties = {
-  display: 'flex',
-  gap: '2rem'
-}
+import cls from './MainNews.module.css'
 
 const MainNews = memo(() => {
   return (
-    <section style={styles}>
+    <section className={cls.mainNews}>
       <AllNews />
       <LatestNews />
     </section>
