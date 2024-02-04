@@ -1,20 +1,14 @@
 import { Layout } from "antd"
-import { CSSProperties, memo } from "react";
-import { NavbarHigh } from "./NavbarHigh/NavbarHigh";
+import { memo } from "react";
+import { NavbarHigh } from "../NavbarHigh/NavbarHigh";
 import { ThemeSwitcher } from "widgets/ThemeSwitcher";
 import { LanguageSwitcher } from "widgets/LanguageSwitcher";
-import { NavbarLow } from "./NavbarLow/NavbarLow";
-
-const headerStyle: CSSProperties = {
-  width: '100%',
-  padding: '0 1rem',
-  minHeight: 'var(--navbar-height)',
-  background: 'var(--inverted-bg-color)',
-}
+import { NavbarLow } from "../NavbarLow/NavbarLow";
+import cls from './Navbar.module.css'
 
 export const Navbar = memo(() => {
   return (
-    <Layout.Header style={headerStyle}>
+    <Layout.Header className={cls.header}>
       <NavbarHigh 
         themeSwitcher={<ThemeSwitcher />} 
         langSwitcher={<LanguageSwitcher />}

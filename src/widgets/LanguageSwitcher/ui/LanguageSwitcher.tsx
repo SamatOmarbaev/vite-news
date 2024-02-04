@@ -1,14 +1,7 @@
 import { Button } from "antd"
-import { CSSProperties, memo } from "react"
+import { memo } from "react"
 import { useTranslation } from "react-i18next"
-
-const styles: CSSProperties = {
-  padding: '0px',
-  marginRight: '10px',
-  color: 'var(--secondary-color)',
-  fontWeight: '900',
-  fontSize: '1rem'
-}
+import cls from './LanguageSwitcher.module.css'
 
 export const LanguageSwitcher = memo(() => {
   const {t, i18n} = useTranslation()
@@ -19,9 +12,9 @@ export const LanguageSwitcher = memo(() => {
 
   return (
     <Button 
-      style={styles} 
       onClick={toggleLang}
       type="link"
+      className={cls.switch}
     >
       {t('Язык')}
     </Button>

@@ -1,7 +1,7 @@
 import { Skeleton, Stack } from "@mui/material"
 import { memo } from "react"
 
-export const ArticleListItemSkeleton = memo(() => {
+export const NewListItemSkeleton = memo(() => {
   return (
     <Stack spacing={2}>
       <Skeleton variant="rounded" width={300} height={160} />

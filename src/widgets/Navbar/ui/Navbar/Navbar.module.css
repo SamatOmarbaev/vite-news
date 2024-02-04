@@ -1,0 +1,6 @@
+.header {
+    width: 100%;
+    padding: 0 1rem;
+    min-height: var(--navbar-height);
+    background: var(--inverted-bg-color);
+}

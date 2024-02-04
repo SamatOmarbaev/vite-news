@@ -1,17 +1,4 @@
-import { Article } from "entities/Article";
-import { CategoriesType } from "entities/Article/model/types/Article";
-
-export interface NewsApiResponse {
-    news: Article[];
-    page: number;
-    status: string;
-}
-
-export interface CategoriesApiResponse {
-    categories: CategoriesType[];
-    description: string;
-    status: string;
-}
+import { CategoriesType } from "entities/category";
 
 export interface Filters {
     page_number: number;

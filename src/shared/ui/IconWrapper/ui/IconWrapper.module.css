@@ -1,0 +1,6 @@
+.iconWrapper {
+    fill: var(--secondary-color);
+    transition: fill .3s;
+    height: 100%;
+    width: 100%;
+}

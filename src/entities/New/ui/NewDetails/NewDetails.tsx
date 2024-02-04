@@ -7,7 +7,7 @@ import { useParams } from "react-router-dom"
 // }
 
 // export const ArticleDetails = memo((props: ArticleDetailsProps) => {
-export const ArticleDetails = memo(() => {
+export const NewDetails = memo(() => {
   // const {item} = props
   const {id} = useParams()
   

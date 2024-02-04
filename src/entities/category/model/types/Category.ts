@@ -1,13 +1,7 @@
-export interface Article {
-  author: string
-  category: CategoriesType[]
-  description: string
-  id: string
-  image: string
-  language: string
-  published: string
-  title: string
-  url: string
+export interface CategoriesApiResponse {
+    categories: CategoriesType[];
+    description: string;
+    status: string;
 }
 
 export type CategoriesType =

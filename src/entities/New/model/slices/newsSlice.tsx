@@ -1,11 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit'
 import type { PayloadAction } from '@reduxjs/toolkit'
-import { Article } from 'entities/Article'
-import { Filters } from '../types/NewsApiResponse'
+import { News } from 'entities/New'
+import { Filters } from '../../../../pages/MainNews/model/types/NewsApiResponse'
 import { PAGE_SIZE } from 'shared/const/constants'
 
 interface NewsState {
-  news: Article[]
+  news: News[]
   filters: Filters
 }
 
@@ -23,7 +23,7 @@ export const newsSlice = createSlice({
   name: 'news',
   initialState,
   reducers: {
-    setNews: (state, action: PayloadAction<Article[]>) => {
+    setNews: (state, action: PayloadAction<News[]>) => {
       state.news = action.payload
     },
     setFilters: (state, action: PayloadAction<{key: string, value: string | number | null}>) => {
