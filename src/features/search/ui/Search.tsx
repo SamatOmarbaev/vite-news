@@ -1,14 +1,14 @@
 import { Skeleton, TextField } from '@mui/material';
 import { memo } from 'react';
-import './SearchComponent.css'
+import './Search.css'
 
-interface SearchComponentProps {
+interface SearchProps {
   keywords: string;
   setKeywords: (value: string) => void
   isLoading?: boolean;
 }
 
-export const SearchComponent = memo((props: SearchComponentProps) => {
+export const Search = memo((props: SearchProps) => {
   const {keywords, setKeywords, isLoading} = props
 
   if (isLoading) {

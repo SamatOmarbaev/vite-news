@@ -1,11 +1,10 @@
 import { TOTAL_PAGE } from "shared/const/constants"
 import { useDebounce } from "shared/lib/hooks/useDebounce"
-import { PaginationWrapper } from "shared/ui/PaginationWrapper"
-import { useGetNewsQuery } from "../../model/services/getNews"
+import { useGetNewsQuery } from "../../../../entities/New/model/services/getNews"
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch"
 import { useAppSelector } from "shared/lib/hooks/useAppSelector"
-import { newsSliceActions } from "entities/New/model/slices/newsSlice"
-import { NewsList } from "entities/New"
+import { NewsList, newsSliceActions } from "entities/New"
+import { MyPagination } from "features/pagination"
 
 export const MainNewsContent = () => {
   const dispatch = useAppDispatch()
@@ -20,11 +19,12 @@ export const MainNewsContent = () => {
   return (
     <section>
       <NewsList items={data?.news} isLoading={isLoading} />
-      <PaginationWrapper 
+      <MyPagination 
         totalPage={TOTAL_PAGE} 
         setCurrentPage={(page_number) => 
           dispatch(newsSliceActions.setFilters({key: 'page_number', value: page_number}))
         } 
+        isLoading={isLoading}
       />
     </section>
   )

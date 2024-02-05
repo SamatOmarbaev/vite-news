@@ -1,5 +1,6 @@
 import { combineReducers } from "@reduxjs/toolkit";
-import { categoriesNewsApi, latestNewsApi, newsApi, newsSliceReducer } from "pages/MainNews";
+import { latestNewsApi, newsApi, newsSliceReducer } from "entities/New";
+import { categoriesNewsApi } from "entities/category";
 
 export const rootReducers = combineReducers({
   news: newsSliceReducer,

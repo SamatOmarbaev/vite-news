@@ -1,9 +1,9 @@
 import { useAppSelector } from "shared/lib/hooks/useAppSelector"
-import { useGetByCategoriesQuery } from "../../model/services/getByCategories"
-import { CategorySwitch } from "widgets/CategorySwitch"
-import { SearchComponent } from "widgets/SearchComponent"
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch"
-import { newsSliceActions } from "entities/New/model/slices/newsSlice"
+import { newsSliceActions } from "entities/New"
+import { useGetByCategoriesQuery } from "entities/category"
+import { CategorySwitch } from "features/category"
+import { Search } from "features/search"
 
 export const MainNewsFilters = () => {
   const dispatch = useAppDispatch()
@@ -12,7 +12,7 @@ export const MainNewsFilters = () => {
 
   return (
     <section style={{display: 'flex', alignItems: 'center'}}>
-      <SearchComponent
+      <Search
         keywords={filters.keywords}
         setKeywords={(keywords) => dispatch(newsSliceActions.setFilters({key: 'keywords', value: keywords}))}
         isLoading={isLoading}

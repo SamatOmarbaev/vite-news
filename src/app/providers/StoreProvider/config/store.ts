@@ -1,6 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit'
-import { categoriesNewsApi, latestNewsApi, newsApi } from 'pages/MainNews'
 import { rootReducers } from './reducers'
+import { categoriesNewsApi } from 'entities/category'
+import { latestNewsApi, newsApi } from 'entities/New'
 
 export const store = configureStore({
   reducer: rootReducers,
