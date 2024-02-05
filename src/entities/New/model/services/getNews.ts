@@ -1,7 +1,6 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 import { API_KEY, BASE_URL } from 'shared/api/apiNews'
-import { ParamsType } from '../types/NewsApiResponse'
-import { NewsApiResponse } from 'entities/New'
+import { NewsApiResponse, ParamsType } from '../types/New'
 
 export const newsApi = createApi({
   reducerPath: 'newsApi',

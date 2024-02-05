@@ -47,3 +47,11 @@
     justify-content: center;
     margin: 1.5rem 0 0;
 }
+
+.skeletonWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+    gap: .5rem;
+}

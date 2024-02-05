@@ -17,3 +17,12 @@ export interface NewsApiResponse {
   page: number;
   status: string;
 }
+
+export interface Filters {
+  page_number: number;
+  page_size: number;
+  category: CategoriesType | undefined;
+  keywords: string;
+}
+
+export type ParamsType = Partial<Filters>

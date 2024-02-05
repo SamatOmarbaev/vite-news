@@ -1,6 +1,5 @@
 import { memo } from "react"
-import { useGetLatestNewsQuery } from "../../model/services/getLatestNews"
-import { NewRecList } from "entities/New"
+import { NewRecList, useGetLatestNewsQuery } from "entities/New"
 
 const LatestNews = memo(() => {
   const { data, isLoading } = useGetLatestNewsQuery(null)
