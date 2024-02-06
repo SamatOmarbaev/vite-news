@@ -1,17 +1,18 @@
 import { FormControl, InputLabel, MenuItem, Select, SelectChangeEvent, Skeleton } from "@mui/material"
 import { memo, useCallback } from "react"
 import './CategorySwitch.css'
-import { CategoriesType } from "entities/category"
+import { CategoriesType, useGetByCategoriesQuery } from "entities/category"
+import { useAppSelector } from "shared/lib/hooks/useAppSelector"
 
 interface CategorySwitchProps {
-  categories?: CategoriesType[]
-  selectedCategory: CategoriesType | undefined
   setSelectedCategory: (value: CategoriesType | null) => void
-  isLoading?: boolean
 }
 
 export const CategorySwitch = memo((props: CategorySwitchProps) => {
-  const {categories, setSelectedCategory, selectedCategory, isLoading} = props
+  const {setSelectedCategory} = props
+  const filters = useAppSelector(state => state.news.filters)
+
+  const { data, isLoading } = useGetByCategoriesQuery(null)
 
   const handleChange = useCallback((event: SelectChangeEvent) => {
     setSelectedCategory(event.target.value as CategoriesType);
@@ -33,12 +34,12 @@ export const CategorySwitch = memo((props: CategorySwitchProps) => {
       <Select
         labelId="demo-simple-select-label"
         id="demo-simple-select"
-        value={selectedCategory}
+        value={filters.category}
         label="Age"
         onChange={handleChange}
         size="small"
       >
-        {categories?.map((category) => (
+        {data?.categories?.map((category) => (
           <MenuItem key={category} value={category}>{category}</MenuItem>
         ))}
       </Select>

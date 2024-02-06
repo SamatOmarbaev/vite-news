@@ -12,6 +12,8 @@ export interface News {
   url: string
 }
 
+export type ParamsTypeNews = Partial<News>
+
 export interface NewsApiResponse {
   news: News[];
   page: number;

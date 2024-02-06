@@ -1,15 +1,17 @@
 import { Skeleton, TextField } from '@mui/material';
 import { memo } from 'react';
 import './Search.css'
+import { useAppSelector } from 'shared/lib/hooks/useAppSelector';
+import { useGetByCategoriesQuery } from 'entities/category';
 
 interface SearchProps {
-  keywords: string;
   setKeywords: (value: string) => void
-  isLoading?: boolean;
 }
 
 export const Search = memo((props: SearchProps) => {
-  const {keywords, setKeywords, isLoading} = props
+  const { setKeywords} = props
+  const filters = useAppSelector(state => state.news.filters)
+  const { isLoading } = useGetByCategoriesQuery(null)
 
   if (isLoading) {
     return (
@@ -24,7 +26,7 @@ export const Search = memo((props: SearchProps) => {
       variant="outlined" 
       size="small"
       className='search'
-      value={keywords}
+      value={filters.keywords}
       onChange={(e) => setKeywords(e.target.value)}
     />
   )

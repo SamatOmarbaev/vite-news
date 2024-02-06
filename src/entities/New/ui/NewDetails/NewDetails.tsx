@@ -1,18 +1,22 @@
-// import { Article } from "../../model/types/Article"
+// import { News } from "../../model/types/New"
+// import { useGetNewByIdQuery } from "entities/New"
 import { memo } from "react"
-import { useParams } from "react-router-dom"
+// import { useParams } from "react-router-dom"
 
-// interface ArticleDetailsProps {
-//   item?: Article
-// }
+interface NewDetailsProps {
+  id?: string
+}
 
-// export const ArticleDetails = memo((props: ArticleDetailsProps) => {
-export const NewDetails = memo(() => {
-  // const {item} = props
-  const {id} = useParams()
+export const NewDetails = memo((props: NewDetailsProps) => {
+  const { id } = props
+  // const {id} = useParams()
+  // const { data: newById } = useGetNewByIdQuery({ id })
   
   return (
     <div>
+      {/* <h2>
+        {newById?.title}
+      </h2> */}
       {'Страница с id = ' + id}
     </div>
   )

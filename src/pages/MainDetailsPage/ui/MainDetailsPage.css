@@ -13,8 +13,8 @@
 }
 
 .btn {
-    margin-right: auto;
-    border: 1px solid var(--primary-color-rgba);
-    color: var(--primary-color);
-    background-color: var(--inverted-bg-color);
+    margin-right: auto !important;
+    border: 1px solid var(--primary-color-rgba) !important;
+    color: var(--primary-color) !important;
+    background-color: var(--inverted-bg-color) !important;
 }

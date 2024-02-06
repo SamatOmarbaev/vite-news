@@ -1,21 +1,25 @@
-import axios from "axios";
-import { API_KEY, BASE_URL } from "shared/api/apiNews";
+import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
+import { API_KEY, BASE_URL } from 'shared/api/apiNews'
+import { NewsApiResponse, ParamsTypeNews } from '../types/New'
 
-interface GetNewsByIdProps {
-  newsId: string
-}
+export const newByIdApi = createApi({
+  reducerPath: 'newByIdApi',
+  baseQuery: fetchBaseQuery({ baseUrl: BASE_URL }),
+  endpoints: (builder) => ({
+    getNewById: builder.query<NewsApiResponse, ParamsTypeNews>({
+      keepUnusedDataFor: 0,
+      query: (params) => {
+        const {id} = params || {}
+        return {
+          url: 'search',
+          params: {
+            apiKey: API_KEY,
+            id
+          }
+        }
+      },
+    }),
+  }),
+})
 
-export const getNewsById = async ({newsId}: GetNewsByIdProps) => {
-  try {
-    const response = await axios.get(`${BASE_URL}search/${newsId}`, {
-      params: {
-        apiKey: API_KEY,
-        newsId
-      }
-    })
-
-    return response.data
-  } catch (e) {
-    console.log(e);
-  }
-}
+export const { useGetNewByIdQuery } = newByIdApi
