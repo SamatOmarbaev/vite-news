@@ -3,7 +3,7 @@ import { store } from ".."
 import { ReactNode } from "react"
 
 interface StoreProviderProps {
-    children?: ReactNode
+  children?: ReactNode
 }
 
 export const StoreProvider = (props: StoreProviderProps) => {
