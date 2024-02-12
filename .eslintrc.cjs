@@ -16,7 +16,13 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
-  plugins: ['react-refresh', "react", 'i18next', 'react-hooks'],
+  plugins: [
+    'react-refresh', 
+    'react', 
+    'i18next', 
+    'react-hooks',
+    'ulbi-tv-plugin'
+  ],
   rules: {
     'react/jsx-indent': [2, 2],
     'react/jsx-indent-props': [2, 2],
@@ -62,5 +68,6 @@ module.exports = {
         markupOnly: true,
       },
     ],
+    'ulbi-tv-plugin/path-checker': 'error'
   },
 }

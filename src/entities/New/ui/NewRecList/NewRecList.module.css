@@ -4,6 +4,6 @@
     justify-items: center;
     gap: 2rem 1rem;
     overflow-y: scroll;
-    max-height: calc(100vh - var(--navbar-height));
+    max-height: calc(90vh - var(--navbar-height));
     padding: 2rem;
 }

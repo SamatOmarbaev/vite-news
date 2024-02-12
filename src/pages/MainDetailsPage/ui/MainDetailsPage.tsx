@@ -3,11 +3,12 @@ import { memo } from "react"
 import { useNavigate } from "react-router-dom"
 import './MainDetailsPage.css'
 import { useTranslation } from "react-i18next"
-import { NewDetails } from "entities/New"
+// import { NewDetails } from "entities/New"
 
 const MainDateilsPage = memo(() => {
   const { t } = useTranslation()
   const navigate = useNavigate()
+  // const {id} = useParams<{ id: number }>()
 
   return (
     <div className={'main'}>
@@ -18,7 +19,7 @@ const MainDateilsPage = memo(() => {
       >
         {t('Назад')}
       </Button>
-      <NewDetails />
+      {/* <NewDetails id={id} /> */}
     </div>
   )
 })
