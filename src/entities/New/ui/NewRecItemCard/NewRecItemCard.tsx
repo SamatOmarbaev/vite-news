@@ -1,6 +1,6 @@
 import { Box, Card, CardContent, CardMedia, Typography } from "@mui/material"
 import { RoutePath } from "app/providers/router/ui/config"
-import { News } from "entities/New"
+import { News } from "../../model/types/New"
 import { memo, useCallback } from "react"
 import { useNavigate } from "react-router-dom"
 import cls from './NewRecItemCard.module.css'

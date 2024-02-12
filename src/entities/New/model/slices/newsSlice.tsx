@@ -1,8 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit'
 import type { PayloadAction } from '@reduxjs/toolkit'
-import { News } from 'entities/New'
 import { PAGE_SIZE } from 'shared/const/constants'
-import { Filters } from '../types/New'
+import { Filters, News } from '../types/New'
 
 interface NewsState {
   news: News[]
