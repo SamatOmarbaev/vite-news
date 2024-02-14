@@ -68,6 +68,7 @@ module.exports = {
         markupOnly: true,
       },
     ],
-    'ulbi-tv-plugin/path-checker': 'error'
+    'ulbi-tv-plugin/path-checker': 'error',
+    '@typescript-eslint/no-explicit-any': 'off',
   },
 }
