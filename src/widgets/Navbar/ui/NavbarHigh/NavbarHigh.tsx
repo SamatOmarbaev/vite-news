@@ -7,16 +7,16 @@ import cls from './NavbarHigh.module.css'
 
 interface NavbarHighProps {
   themeSwitcher?: ReactNode;
-  langSwitcher?: ReactNode;
+  // langSwitcher?: ReactNode;
 }
 
 export const NavbarHigh = memo((props: NavbarHighProps) => {
-  const {themeSwitcher, langSwitcher} = props
+  const {themeSwitcher} = props
 
   return (
     <nav className={cls.headerHigh}>
       {themeSwitcher}
-      {langSwitcher}
+      {/* {langSwitcher} */}
       <NewsLogo className={cls.logo}/>
       <Button disabled type="link" size="middle" className={cls.userBtn}>
         <IconWrapper Svg={UserIcon} />
