@@ -7,6 +7,10 @@
     cursor: pointer;
 }
 
+.skeleton, .card {
+    margin-bottom: 1rem !important;
+}
+
 .title {
     overflow: hidden;
     -webkit-line-clamp: 2;
