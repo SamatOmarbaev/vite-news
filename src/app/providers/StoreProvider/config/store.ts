@@ -1,14 +1,14 @@
 import { configureStore } from '@reduxjs/toolkit'
 import { rootReducers } from './reducers'
 import { categoriesNewsApi } from 'entities/category'
-import { latestNewsApi, newByIdApi, newsApi } from 'entities/New'
+import { latestNewsApi, newsApi } from 'entities/New'
 
 export const store = configureStore({
   reducer: rootReducers,
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(
       newsApi.middleware, latestNewsApi.middleware, 
-      categoriesNewsApi.middleware, newByIdApi.middleware
+      categoriesNewsApi.middleware
     ),
 })
 

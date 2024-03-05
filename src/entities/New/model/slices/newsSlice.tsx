@@ -6,10 +6,12 @@ import { Filters, News } from '../types/New'
 interface NewsState {
   news: News[]
   filters: Filters
+  currentNews: News | null
 }
 
 const initialState: NewsState = {
   news: [],
+  currentNews: null,
   filters: {
     page_number: 1,
     page_size: PAGE_SIZE,
@@ -24,6 +26,9 @@ export const newsSlice = createSlice({
   reducers: {
     setNews: (state, action: PayloadAction<News[]>) => {
       state.news = action.payload
+    },
+    setCurrentNews: (state, action: PayloadAction<News | null>) => {
+      state.currentNews = action.payload
     },
     setFilters: (state, action: PayloadAction<{key: string, value: string | number | null}>) => {
       const {key, value} = action.payload

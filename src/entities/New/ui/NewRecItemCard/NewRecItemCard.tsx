@@ -1,25 +1,18 @@
 import { Box, Card, CardContent, CardMedia, Typography } from "@mui/material"
-import { RoutePath } from "app/providers/router/ui/config"
 import { News } from "../../model/types/New"
-import { memo, useCallback } from "react"
-import { useNavigate } from "react-router-dom"
+import { memo } from "react"
 import cls from './NewRecItemCard.module.css'
 
 interface NewRecItemProps {
   item: News
+  onClick?: (news: News) => void
 }
 
-export const NewRecItemCard = memo(({item}: NewRecItemProps) => {
-  const navigate = useNavigate()
-
-  const onOpenArticle = useCallback(() => {
-    navigate(RoutePath.news_details + item.id)
-  }, [navigate, item.id])
-
+export const NewRecItemCard = memo(({item, onClick}: NewRecItemProps) => {
   return (
     <Card 
       sx={{ display: 'flex' }} 
-      onClick={onOpenArticle} 
+      onClick={() => onClick ? onClick(item) : null} 
       className={cls.card}
     >
       <CardMedia

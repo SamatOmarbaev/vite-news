@@ -6,6 +6,14 @@
     line-height: 0;
 }
 
+a {
+    color: var(--primary-color);
+
+    &:hover {
+        color: var(--primary-color-rgba);
+    }
+}
+
 input,
 button,
 textarea,
@@ -141,9 +149,6 @@ body {
     overflow-y: auto;
     padding: 1.25rem 2.5rem;
     height: calc(100vh - var(--navbar-height));
-    display: flex;
-    flex-direction: column;
-    row-gap: 2rem;
 }
 
 ::-webkit-scrollbar {
@@ -158,3 +163,26 @@ body {
     border-radius: 20px;
 }
   
+.css-1k23hlb-MuiButtonBase-root-MuiButton-root {
+    border: 1px solid var(--primary-color-rgba) !important;
+    color: var(--primary-color-rgba) !important;
+}
+
+.css-1k23hlb-MuiButtonBase-root-MuiButton-root:hover {
+    border: 1px solid var(--primary-color) !important;
+    color: var(--primary-color) !important;
+}
+
+.css-1oitmrd-MuiButtonBase-root-MuiCardActionArea-root {
+    cursor: auto !important;
+}
+
+
+.css-1v2exvi-MuiCardActionArea-focusHighlight {
+    background-color: var(--inverted-bg-color) !important;
+}
+
+.css-1oitmrd-MuiButtonBase-root-MuiCardActionArea-root:hover .MuiCardActionArea-focusHighlight {
+    opacity: 0 !important;
+}
+

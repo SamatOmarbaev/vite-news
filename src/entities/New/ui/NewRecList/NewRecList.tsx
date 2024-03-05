@@ -8,28 +8,18 @@ import { Virtuoso } from 'react-virtuoso';
 interface NewRecListProps {
   items?: News[];
   isLoading?: boolean;
+  onClick?: (news: News) => void;
 }
 
-// const getSkeletons = () => (
-//   new Array(12)
-//     .fill(0)
-//     .map((_, index) => (
-//       <NewRecItemSkeleton key={index} />
-//     ))
-// );
-
 export const NewRecList = memo((props: NewRecListProps) => {
-  const {isLoading, items} = props
+  const {isLoading, items, onClick} = props
 
   const renderNewsRec = (item: News) => (
-    <NewRecItemCard item={item} key={item.id} />
+    <NewRecItemCard item={item} onClick={onClick} key={item.id} />
   )
 
   if (isLoading) {
     return (
-      // <ul className={cls.list}>
-      //   {getSkeletons()}
-      // </ul>
       <Virtuoso
         className={cls.list}
         totalCount={12}
@@ -39,11 +29,6 @@ export const NewRecList = memo((props: NewRecListProps) => {
   }
   
   return (
-    // <ul className={cls.list}>
-    //   {items!.length > 0
-    //     ?   items?.map(renderNewsRec)
-    //     :   null}
-    // </ul>
     <Virtuoso
       className={cls.list}
       totalCount={items?.length || 0}
