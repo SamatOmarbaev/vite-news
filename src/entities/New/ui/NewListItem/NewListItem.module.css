@@ -8,7 +8,7 @@
 
 .title {
     overflow: hidden;
-    -webkit-line-clamp: 2;
+    -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
     display: -webkit-box;
 }
@@ -19,6 +19,7 @@
     -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
     display: -webkit-box;
+    margin-bottom: 0.5rem !important;
 }
 
 .image {
@@ -26,4 +27,8 @@
     display: flex !important;
     justify-content: center !important;
     align-items: center !important;
+}
+
+.buttonMore {
+    padding-left: 1rem;
 }

@@ -1,4 +1,4 @@
-import { memo } from 'react';
+import { ReactNode, memo } from 'react';
 import { News } from '../../model/types/New';
 import { NewListItem } from '../NewListItem/NewListItem';
 import { NewListItemSkeleton } from '../NewListItem/NewListItemSkeleton';
@@ -7,6 +7,7 @@ import cls from './NewsList.module.css'
 interface NewsListProps {
   items?: News[];
   isLoading?: boolean;
+  onClick?: (news: News) => ReactNode
 }
 
 const getSkeletons = () => (
@@ -18,10 +19,10 @@ const getSkeletons = () => (
 );
 
 export const NewsList = memo((props: NewsListProps) => {
-  const {isLoading, items} = props
+  const {isLoading, items, onClick} = props
 
   const renderNews = (item: News) => (
-    <NewListItem item={item} key={item.id} />
+    <NewListItem item={item} onClick={onClick} key={item.id} />
   )
 
   if (isLoading) {

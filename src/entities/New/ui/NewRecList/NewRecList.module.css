@@ -7,3 +7,12 @@
     max-height: calc(90vh - var(--navbar-height));
     padding: 1rem;
 }
+
+@media screen and (max-width:768px) {
+    [data-viewport-type="element"] {
+        position: inherit !important;
+    }
+    [data-test-id="virtuoso-scroller"] {
+        overflow-y: inherit !important;
+    }
+}

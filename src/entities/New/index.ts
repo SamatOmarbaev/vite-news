@@ -6,4 +6,3 @@ export { newsSliceActions, newsSliceReducer } from "./model/slices/newsSlice";
 export type { useGetNewsQuery } from "./model/services/getNews";
 export { newsApi } from "./model/services/getNews";
 export { latestNewsApi, useGetLatestNewsQuery } from "./model/services/getLatestNews";
-export { newByIdApi, useGetNewByIdQuery } from "./model/services/getNewsById";
